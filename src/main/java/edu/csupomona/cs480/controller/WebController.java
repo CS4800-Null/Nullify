@@ -133,4 +133,16 @@ public class WebController {
 		return modelAndView;
 	}
 
+	/**
+	 * This API does something.
+	 *
+	 * Author - Jay Chen
+	 * //@param ??
+	 */
+	@RequestMapping(value = "/cb", method = RequestMethod.GET)
+	public String annoy()
+	{
+        return "useless string";
+	}
+
 }
