@@ -139,8 +139,8 @@ public class WebController {
 	 * Author - Jay Chen
 	 * //@param ??
 	 */
-	@RequestMapping(value = "/cb", method = RequestMethod.GET)
-	public String annoy()
+	@RequestMapping(value = "/teststring", method = RequestMethod.GET)
+	public String teststring()
 	{
         return "useless string";
 	}
