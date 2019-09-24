@@ -1,3 +1,4 @@
+
 // Hi its me, ya boi
 package edu.csupomona.cs480.controller;
 
@@ -168,5 +169,4 @@ public class WebController {
     {
         return "Random Stuff";
     }
-    
 }
