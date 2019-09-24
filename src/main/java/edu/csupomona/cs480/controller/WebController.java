@@ -135,7 +135,7 @@ public class WebController {
 	}
 
 	/**
-	 * This API does something.
+	 * This API prints a string.
 	 *
 	 * Author - Jay Chen
 	 * //@param ??
