@@ -145,16 +145,16 @@ public class WebController {
         return "useless string";
 	}
 
-	/**
-	 * This method prints out "Hello World"
-	 *
-	 * Author - Romulo Supnet
-	 * //@param ??
-	 */
-	@RequestMapping(value = "/printHelloWorld", method = RequestMethod.GET)
-	public String printHelloWorld()
-	{
-		return "Hello World";
-	}
+    /**
+     * This method prints out "Hello World"
+     *
+     * Author - Romulo Supnet
+     * //@param ??
+     */
+    @RequestMapping(value = "/printHelloWorld", method = RequestMethod.GET)
+    public String printHelloWorld()
+    {
+        return "Hello World";
+    }
 
 }
