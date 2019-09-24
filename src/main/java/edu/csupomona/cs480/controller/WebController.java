@@ -169,4 +169,16 @@ public class WebController {
     {
         return "Random Stuff";
     }
+	/**
+	 * This method prints out "It works"
+	 *
+	 * Author - Jonathan Dunsmore
+	 * //@param none
+	 */
+	@RequestMapping(value = "/doesItWork", method = RequestMethod.GET)
+	public String doesItWork()
+	{
+		return "It works";
+	}
+
 }
