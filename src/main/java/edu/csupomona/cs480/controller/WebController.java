@@ -159,7 +159,7 @@ public class WebController {
     }
     
     /**
-     * Random method
+     * This prints out "Random Stuff"
      *
      * Author - Jeane Taruc
      * //@param ??
