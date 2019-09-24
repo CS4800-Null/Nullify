@@ -1,0 +1,23 @@
+package edu.csupomona.cs480.data;
+
+public class Website
+{
+	public String websitename;
+	public String domain;
+	public String settings;
+	public String changepassword;
+	public String deleteaccount;
+	public String notes;
+	public boolean candelete;
+
+	public Website(String wn, String d, String s, String cp, String da, String n)
+	{
+		websitename = wn;
+		domain = d;
+		settings = s;
+		changepassword = cp;
+		deleteaccount = da;
+		notes = n;
+		candelete = (deleteaccount == "null");
+	}
+}

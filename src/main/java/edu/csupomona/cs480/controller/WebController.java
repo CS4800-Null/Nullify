@@ -16,6 +16,9 @@ import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 
+import edu.csupomona.cs480.data.JSONReader;
+import edu.csupomona.cs480.data.Website;
+import java.net.URL;
 
 /**
  * This is the controller used by Spring framework.
@@ -181,4 +184,19 @@ public class WebController {
 		return "It works";
 	}
 
+	/**
+	 * This method prints out the contents of our sitelist.JSON file
+	 *
+	 * Author - Jay Chen
+	 * //@param none
+	 */
+	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
+	public String sitelist()
+	{
+		JSONReader js = new JSONReader();
+		String file = "src/main/resources/static/sitelist.json";
+		Website[] web = js.readWebsiteJSON(file);
+		return "testingthismethod sitelist.json";
+		//js.generateWebsiteJSON(web);
+	}
 }
