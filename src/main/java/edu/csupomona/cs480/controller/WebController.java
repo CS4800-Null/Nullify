@@ -156,5 +156,17 @@ public class WebController {
     {
         return "Hello World";
     }
-
+    
+    /**
+     * Random method
+     *
+     * Author - Jeane Taruc
+     * //@param ??
+     */
+    @RequestMapping(value = "/printRandomStuff", method = RequestMethod.GET)
+    public String printRandomStuff()
+    {
+        return "Random Stuff";
+    }
+    
 }
