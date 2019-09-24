@@ -1,3 +1,4 @@
+//ya boi has it working in intellij now
 package edu.csupomona.cs480;
 
 import org.springframework.boot.SpringApplication;
