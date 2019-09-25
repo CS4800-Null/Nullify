@@ -2,12 +2,12 @@ package edu.csupomona.cs480.data;
 
 public class Website
 {
-	public String website;
-	public String domain;
-	public String settings;
-	public String changepassword;
-	public String deleteaccount;
-	public String notes;
+	private String website;
+	private String domain;
+	private String settings;
+	private String changepassword;
+	private String deleteaccount;
+	private String notes;
 
 	public Website(String wn, String d, String s, String cp, String da, String n)
 	{
