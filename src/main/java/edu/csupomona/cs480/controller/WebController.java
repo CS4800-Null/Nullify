@@ -2,7 +2,6 @@
 // Hi its me, ya boi
 package edu.csupomona.cs480.controller;
 
-import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ import edu.csupomona.cs480.data.provider.UserManager;
 
 import edu.csupomona.cs480.data.JSONReader;
 import edu.csupomona.cs480.data.Website;
-import com.google.gson.*;
 
 
 /**
