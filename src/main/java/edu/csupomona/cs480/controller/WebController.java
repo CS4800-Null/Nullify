@@ -2,6 +2,7 @@
 // Hi its me, ya boi
 package edu.csupomona.cs480.controller;
 
+import java.io.File;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -191,12 +192,11 @@ public class WebController {
 	 * //@param none
 	 */
 	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
-	public String sitelist()
+	public File sitelist() throws java.io.IOException
 	{
 		JSONReader js = new JSONReader();
 		String file = "src/main/resources/static/sitelist.json";
 		Website[] web = js.readWebsiteJSON(file);
-		return "testingthismethod sitelist.json";
-		//js.generateWebsiteJSON(web);
+		return js.generateWebsiteJSON(web);
 	}
 }

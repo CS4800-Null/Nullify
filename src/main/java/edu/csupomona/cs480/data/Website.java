@@ -5,8 +5,8 @@ public class Website
 	public String websitename;
 	public String domain;
 	public String settings;
-	public String changepassword;
-	public String deleteaccount;
+	public String changepass;
+	public String deleteacct;
 	public String notes;
 	public boolean candelete;
 
@@ -15,9 +15,44 @@ public class Website
 		websitename = wn;
 		domain = d;
 		settings = s;
-		changepassword = cp;
-		deleteaccount = da;
+		changepass = cp;
+		deleteacct = da;
 		notes = n;
-		candelete = (deleteaccount == "null");
+		candelete = (deleteacct == "null");
+	}
+
+	public String getWebsite()
+	{
+		return websitename;
+	}
+
+	public String getDomain()
+	{
+		return domain;
+	}
+
+	public String getSettings()
+	{
+		return settings;
+	}
+
+	public String getChangePass()
+	{
+		return changepass;
+	}
+
+	public String getDeleteAcct()
+	{
+		return deleteacct;
+	}
+
+	public String getNotes()
+	{
+		return notes;
+	}
+
+	public boolean canDelete()
+	{
+		return candelete;
 	}
 }
