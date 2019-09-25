@@ -2,28 +2,26 @@ package edu.csupomona.cs480.data;
 
 public class Website
 {
-	public String websitename;
+	public String website;
 	public String domain;
 	public String settings;
-	public String changepass;
-	public String deleteacct;
+	public String changepassword;
+	public String deleteaccount;
 	public String notes;
-	public boolean candelete;
 
 	public Website(String wn, String d, String s, String cp, String da, String n)
 	{
-		websitename = wn;
+		website = wn;
 		domain = d;
 		settings = s;
-		changepass = cp;
-		deleteacct = da;
+		changepassword = cp;
+		deleteaccount = da;
 		notes = n;
-		candelete = (deleteacct == "null");
 	}
 
 	public String getWebsite()
 	{
-		return websitename;
+		return website;
 	}
 
 	public String getDomain()
@@ -36,14 +34,14 @@ public class Website
 		return settings;
 	}
 
-	public String getChangePass()
+	public String getChangepassword()
 	{
-		return changepass;
+		return changepassword;
 	}
 
-	public String getDeleteAcct()
+	public String getDeleteaccount()
 	{
-		return deleteacct;
+		return deleteaccount;
 	}
 
 	public String getNotes()
@@ -53,6 +51,6 @@ public class Website
 
 	public boolean canDelete()
 	{
-		return candelete;
+		return (deleteaccount == "null");
 	}
 }

@@ -19,7 +19,8 @@ import edu.csupomona.cs480.data.provider.UserManager;
 
 import edu.csupomona.cs480.data.JSONReader;
 import edu.csupomona.cs480.data.Website;
-import java.net.URL;
+import com.google.gson.*;
+
 
 /**
  * This is the controller used by Spring framework.
@@ -186,17 +187,18 @@ public class WebController {
 	}
 
 	/**
-	 * This method prints out the contents of our sitelist.JSON file
-	 *
+	 * This method returns the contents of our sitelist.JSON file
+	 * after parsing the file to an array of Website objects
+	 * Uses GSON external library for parsing JSON data to custom Website Object
 	 * Author - Jay Chen
-	 * //@param none
+	 * @returns Website[] read from sitelist.json (automatically converted to JSON by Spring)
 	 */
 	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
-	public File sitelist() throws java.io.IOException
+	Website[] sitelist() throws java.io.IOException
 	{
 		JSONReader js = new JSONReader();
 		String file = "src/main/resources/static/sitelist.json";
 		Website[] web = js.readWebsiteJSON(file);
-		return js.generateWebsiteJSON(web);
+		return web;
 	}
 }
