@@ -202,6 +202,13 @@ public class WebController {
 		return web;
 	}
 
+	/**
+	 * This method returns a parsed HTML string
+	 * takes HTML into string
+	 * parses using JSOUP to Document
+	 * Uses JSOUP to get parts of HTML and convert to strings
+	 * @return prints out title and body of sample string
+	 */
 	@RequestMapping(value = "/parseHTML", method = RequestMethod.GET)
 	public String parseHTML(){
 		String htmlString = "<html><head><title>My title</title></head>"
