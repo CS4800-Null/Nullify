@@ -63,7 +63,14 @@
   			<version>2.8.5</version>
 		 </dependency>
 
-	</dependencies>
+        <!-- added Jsoup: mvnrepository/artifact/org.jsoup/jsoup for A4 (RomuloS) -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.12.1</version>
+        </dependency>
+
+    </dependencies>
 
 	<build>
 		<plugins>
