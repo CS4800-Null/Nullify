@@ -71,12 +71,12 @@
 			<version>1.12.1</version>
 		</dependency>
 
-        <!-- added Jsoup: mvnrepository/artifact/org.jsoup/jsoup for A4 (RomuloS) -->
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.12.1</version>
-        </dependency>
+		<!-- added Google Guava https://mvnrepository.com/artifact/com.google.guava/guava for Assignment 4 (RomuloS)-->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>28.1-jre</version>
+		</dependency>
 
 	<!-- Added Apache Commons Math3 for Assignment4 (JeaneT) -->
 	<dependency>
