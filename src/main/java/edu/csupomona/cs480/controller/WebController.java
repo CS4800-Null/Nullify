@@ -21,6 +21,9 @@ import edu.csupomona.cs480.data.provider.UserManager;
 import edu.csupomona.cs480.data.JSONReader;
 import edu.csupomona.cs480.data.Website;
 
+import org.apache.commons.math3.random;
+import org.apache.commons.math3.random.RandomData;
+
 
 /**
  * This is the controller used by Spring framework.
@@ -219,5 +222,19 @@ public class WebController {
 		String body = doc.body().text();
 
 		return ("Title: " + title + " Body: " + body);
+	}
+	
+	/**
+	 * Returns Random int
+	 * Jeane Taruc
+	 * @return
+	 */
+	@RequestMapping(value = "/RandomInt", method = RequestMethod.GET)
+	public int RandomInt(){
+		return nextInt(1,5);
+	}
+
+	private int nextInt(int i, int j) {
+		return 0;
 	}
 }
