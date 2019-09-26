@@ -78,6 +78,14 @@
             <version>1.12.1</version>
         </dependency>
 
+	<!-- Added Apache Commons Math3 for Assignment4 (JeaneT) -->
+	<dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-math3</artifactId>
+    		<version>3.0</version>
+	</dependency>
+
+
     </dependencies>
 
 	<build>
