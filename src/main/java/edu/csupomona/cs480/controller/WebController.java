@@ -4,6 +4,8 @@ package edu.csupomona.cs480.controller;
 
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -198,5 +200,17 @@ public class WebController {
 		String file = "src/main/resources/static/sitelist.json";
 		Website[] web = js.readWebsiteJSON(file);
 		return web;
+	}
+
+	@RequestMapping(value = "/parseHTML", method = RequestMethod.GET)
+	public String parseHTML(){
+		String htmlString = "<html><head><title>My title</title></head>"
+				+ "<body>Body content</body></html>";
+
+		Document doc = Jsoup.parse(htmlString);
+		String title = doc.title();
+		String body = doc.body().text();
+
+		return ("Title: " + title + " Body: " + body);
 	}
 }
