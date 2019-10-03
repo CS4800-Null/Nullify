@@ -1,7 +1,11 @@
 package edu.csupomona.cs480.data;
 
+import javax.persistence.*;
+
+@Entity
 public class Website
 {
+	@Id
 	private String website;
 	private String domain;
 	private String settings;
