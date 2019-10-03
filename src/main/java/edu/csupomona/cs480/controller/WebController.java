@@ -143,6 +143,30 @@ public class WebController {
 	}
 
 	/**
+	 * Webpage for user's personal website list
+	 *
+	 * Author - Jeane Taruc
+	 * //@param ??
+	 */
+	@RequestMapping(value = "/mylist", method = RequestMethod.GET)
+	public String mylist()
+	{
+        return "My website list";
+	}
+	
+	/**
+	 * Webpage for settings page
+	 *
+	 * Author - Jeane Taruc
+	 * //@param ??
+	 */
+	@RequestMapping(value = "/settings", method = RequestMethod.GET)
+	public String settings()
+	{
+        return "Settings";
+	}
+	
+	/**
 	 * This API prints a string.
 	 *
 	 * Author - Jay Chen
