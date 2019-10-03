@@ -24,8 +24,6 @@ import edu.csupomona.cs480.data.Website;
 import org.apache.commons.math3.random;
 import org.apache.commons.math3.random.RandomData;
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.Lists;
 
 /**
  * This is the controller used by Spring framework.
@@ -238,19 +236,5 @@ public class WebController {
 
 	private int nextInt(int i, int j) {
 		return 0;
-	}
-
-	/**
-	 * This method joins strings together
-	 * Author - Romulo Supnet
-	 */
-	@RequestMapping(value="/stringJoiner", method = RequestMethod.GET)
-	public String stringJoiner()
-	{
-		List<String> myList = Lists.newArrayList("My", "Name", "is", "Romulo");
-
-		String result = Joiner.on(",").join(myList);
-		return result;
-
 	}
 }
