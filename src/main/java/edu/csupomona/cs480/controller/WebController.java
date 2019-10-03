@@ -21,8 +21,8 @@ import edu.csupomona.cs480.data.provider.UserManager;
 import edu.csupomona.cs480.data.JSONReader;
 import edu.csupomona.cs480.data.Website;
 
-import org.apache.commons.math3.random;
-import org.apache.commons.math3.random.RandomData;
+//import org.apache.commons.math3.random;
+//import org.apache.commons.math3.random.RandomData;
 
 
 /**
@@ -194,9 +194,9 @@ public class WebController {
 	 * after parsing the file to an array of Website objects
 	 * Uses GSON external library for parsing JSON data to custom Website Object
 	 * Author - Jay Chen
-	 * @returns Website[] read from sitelist.json (automatically converted to JSON by Spring)
+	 * @returns Website[] read from sitelist.json (for use in handling website data)
 	 */
-	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
+	//@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
 	Website[] sitelist() throws java.io.IOException
 	{
 		JSONReader js = new JSONReader();
