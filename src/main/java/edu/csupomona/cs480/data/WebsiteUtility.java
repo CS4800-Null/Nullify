@@ -30,6 +30,15 @@ public class WebsiteUtility
 	//filtering method (can delete or not)
 
 	//search method
+		public Website searchWebsite(Website[] site, String webName)
+	{
+		int i = 0;
+		while(site[i].getWebsite() != webName)
+		{
+			i++;
+		}
+		return site[i];	
+	}
 
 	//image file retrieval method
 }
