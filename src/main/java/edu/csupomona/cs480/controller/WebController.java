@@ -54,7 +54,7 @@ public class WebController {
 	 * in your web browser, type the link:
 	 * 	http://localhost:8080/cs480/ping
 	 */
-	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/cs480/ping", method = RequestMethod.GET)
 	String healthCheck() {
 		// You can replace this with other string,
 		// and run the application locally to check your changes
@@ -72,7 +72,7 @@ public class WebController {
 	 * Try it in your web browser:
 	 * 	http://localhost:8080/cs480/user/user101
 	 */
-	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.GET)
 	User getUser(@PathVariable("userId") String userId) {
 		User user = userManager.getUser(userId);
 		return user;
@@ -96,7 +96,7 @@ public class WebController {
 	 * @param major
 	 * @return
 	 */
-	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.POST)
+/**	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.POST)
 	User updateUser(
 			@PathVariable("userId") String id,
 			@RequestParam("name") String name,
@@ -114,7 +114,7 @@ public class WebController {
 	 *
 	 * @param userId
 	 */
-	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.DELETE)
+/**	@RequestMapping(value = "/cs480/user/{userId}", method = RequestMethod.DELETE)
 	void deleteUser(
 			@PathVariable("userId") String userId) {
 		userManager.deleteUser(userId);
@@ -125,7 +125,7 @@ public class WebController {
 	 *
 	 * @return
 	 */
-	@RequestMapping(value = "/cs480/users/list", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/cs480/users/list", method = RequestMethod.GET)
 	List<User> listAllUsers() {
 		return userManager.listAllUsers();
 	}
@@ -135,7 +135,7 @@ public class WebController {
 	 * This method provide a simple web UI for you to test the different
 	 * functionalities used in this web service.
 	 */
-	@RequestMapping(value = "/cs480/home", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/cs480/home", method = RequestMethod.GET)
 	ModelAndView getUserHomepage() {
 		ModelAndView modelAndView = new ModelAndView("home");
 		modelAndView.addObject("users", listAllUsers());
@@ -148,7 +148,7 @@ public class WebController {
 	 * Author - Jeane Taruc
 	 * //@param ??
 	 */
-	@RequestMapping(value = "/mylist", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/mylist", method = RequestMethod.GET)
 	public String mylist()
 	{
         return "My website list";
@@ -160,7 +160,7 @@ public class WebController {
 	 * Author - Jeane Taruc
 	 * //@param ??
 	 */
-	@RequestMapping(value = "/settings", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/settings", method = RequestMethod.GET)
 	public String settings()
 	{
         return "Settings";
@@ -172,7 +172,7 @@ public class WebController {
 	 * Author - Jay Chen
 	 * //@param ??
 	 */
-	@RequestMapping(value = "/teststring", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/teststring", method = RequestMethod.GET)
 	public String teststring()
 	{
         return "useless string";
@@ -184,7 +184,7 @@ public class WebController {
      * Author - Romulo Supnet
      * //@param ??
      */
-    @RequestMapping(value = "/printHelloWorld", method = RequestMethod.GET)
+/**    @RequestMapping(value = "/printHelloWorld", method = RequestMethod.GET)
     public String printHelloWorld()
     {
         return "Hello World";
@@ -196,7 +196,7 @@ public class WebController {
      * Author - Jeane Taruc
      * //@param ??
      */
-    @RequestMapping(value = "/printRandomStuff", method = RequestMethod.GET)
+ /**   @RequestMapping(value = "/printRandomStuff", method = RequestMethod.GET)
     public String printRandomStuff()
     {
         return "Random Stuff";
@@ -207,7 +207,7 @@ public class WebController {
 	 * Author - Jonathan Dunsmore
 	 * //@param none
 	 */
-	@RequestMapping(value = "/doesItWork", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/doesItWork", method = RequestMethod.GET)
 	public String doesItWork()
 	{
 		return "It works";
@@ -220,7 +220,7 @@ public class WebController {
 	 * Author - Jay Chen
 	 * @returns Website[] read from sitelist.json (for use in handling website data)
 	 */
-	//@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
 	Website[] sitelist() throws java.io.IOException
 	{
 		JSONReader js = new JSONReader();
@@ -236,7 +236,7 @@ public class WebController {
 	 * Uses JSOUP to get parts of HTML and convert to strings
 	 * @return prints out title and body of sample string
 	 */
-	@RequestMapping(value = "/parseHTML", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/parseHTML", method = RequestMethod.GET)
 	public String parseHTML(){
 		String htmlString = "<html><head><title>My title</title></head>"
 				+ "<body>Body content</body></html>";
@@ -253,7 +253,7 @@ public class WebController {
 	 * Jeane Taruc
 	 * @return
 	 */
-	@RequestMapping(value = "/RandomInt", method = RequestMethod.GET)
+/**	@RequestMapping(value = "/RandomInt", method = RequestMethod.GET)
 	public int RandomInt(){
 		return nextInt(1,5);
 	}
@@ -261,4 +261,6 @@ public class WebController {
 	private int nextInt(int i, int j) {
 		return 0;
 	}
+
 }
+**/
