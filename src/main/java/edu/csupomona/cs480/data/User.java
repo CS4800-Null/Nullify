@@ -7,45 +7,51 @@ import java.util.Date;
  * The basic user object.
  */
 public class User {
+    /** Websites the user have accounts for */
+    private String UserName;
+    /** Email of the user*/
+    private String email;
+    /** Password of the user*/
+    private String password;
+    /** List of Websites the user have accounts for**/
+    private String UserSites[];
 
-	/** The unique user Id */
-    private String id;
-    /** The unique user Id */
-    private String name;
-    /** The unique user Id */
-    private String major;
-    /** The timestamp when the user is being created */
-    private String creationTime = new Date(System.currentTimeMillis()).toString();
-
-    public String getId() {
-        return id;
+    public String getUserName()
+    {
+    	return UserName;
+    }
+    
+    public void setUserName(String UserName)
+    {
+        this.UserName = UserName;
+    }
+    
+    public String getEmail()
+    {
+    	return email;
+    }
+    
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+    
+    public String getPassword()
+    {
+    	return password;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPassword(String password)
+    {
+    	this.password = DigestUtils.sha256Hex(password);
     }
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getMajor() {
-		return major;
-	}
-
-	public void setMajor(String major) {
-		this.major = major;
-	}
-
-	public String getCreationTime() {
-		return creationTime;
-	}
-
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
-	}
-}
+    
+    public String[] getUserSites()
+    {
+    	return UserSites;
+    }
+    		
+    public void setUserSites(String[] UserSites)
+    {
+    	this.UserSites = UserSites;
+    }
