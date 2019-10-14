@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import edu.csupomona.cs480.data.provider.FSUserManager;
-import edu.csupomona.cs480.data.provider.UserManager;
+  //import edu.csupomona.cs480.data.provider.FSUserManager;
+  //import edu.csupomona.cs480.data.provider.UserManager;
 
 @Configuration
 @ComponentScan

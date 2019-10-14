@@ -6,6 +6,7 @@ import java.util.Date;
 /**
  * The basic user object.
  */
+
 public class User {
     /** Websites the user have accounts for */
     private String UserName;

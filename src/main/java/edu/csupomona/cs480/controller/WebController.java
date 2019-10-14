@@ -47,6 +47,7 @@ public class WebController {
 	@Autowired
 	private UserManager userManager;
 
+}
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
@@ -263,4 +264,5 @@ public class WebController {
 	}
 
 }
+
 **/
