@@ -45,15 +45,23 @@ public class WebController {
 	 * In our project, all the beans are defined in
 	 * the {@link App} class.
 	 */
-	//@Autowired
-	//private UserManager userManager;
+	@Autowired
+	private UserManager userManager;
+	@Autowired
+	private WebsiteManager webManager;
 	private WebsiteUtility websiteUtility = new WebsiteUtility();
+	
 	
 	@RequestMapping(value = "/search/{website}", method = RequestMethod.GET)
 	Website search(@PathVariable("website") String website)
 	{
 		Website site = websiteUtility.search(website);
 		return site;
+	}
+	
+	@RequestMapping(value = "/websites", method = RequestMethod.GET)
+	List<Website> listWebsites() {
+		return webManager.listWebsites();
 	}
 	
 }

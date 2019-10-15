@@ -2,12 +2,12 @@ package edu.csupomona.cs480.data;
 
 import java.io.IOException;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import edu.csupomona.cs480.util.ResourceResolver;
+import javassist.NotFoundException;
 
 public class WebsiteUtility
 {
@@ -31,6 +31,11 @@ public class WebsiteUtility
 			System.out.println("file issue");
 		}
 	}
+	
+	public ArrayList<Website> allWebsites()
+	{
+		return new ArrayList<Website>(Arrays.asList(sitelist));
+	}
 
 	//sorting method
 
@@ -39,12 +44,10 @@ public class WebsiteUtility
 	//search method
 		public Website search(String webName)
 		{
-			int i = 0;
-			while (sitelist[i].getWebsite() != webName)
-			{
-				i++;
-			}
-			return sitelist[i];
+			int idx = Arrays.binarySearch(sitelist, webName);
+			if(idx == -1)
+				return null;
+			return sitelist[idx];
 		}
 
 	//image file retrieval method

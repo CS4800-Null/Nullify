@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/aos.css">
+
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="/js/website-control-ajs.js"></script>
+</head>
+
+<body>
+<div id="colorlib-page">
+	<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+	<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+		<h1 id="colorlib-logo"><a href="index.html">Nullify</a></h1>
+		<nav id="colorlib-main-menu" role="navigation">
+			<ul>
+				<li class="colorlib-active"><a href="index.html">Home</a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="https://github.com/CS4800-Null/Nullify">Github</a></li>
+			</ul>
+		</nav>
+		<div><input type="text" ng-model="searchWebsite" placeholder="Website Name"></div>
+		<div><button id="query_id" ng-click="search()">Search</button></div>
+	</aside>
+</div>
+
+<div class="center-div" id="login">
+	<form name="Login"action="Login">
+		<br>Email<input type="text"name="useremail">
+		<br>Password<input type="password" name="userpassword">
+		<input type="submit"name="loginbutton"value="login">
+	</form>
+</div>
+
+
+<script src="js/scrollax.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

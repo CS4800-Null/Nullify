@@ -1,6 +1,7 @@
 //ya boi has it working in intellij now
 package edu.csupomona.cs480;
 
+import edu.csupomona.cs480.data.provider.WebsiteManager;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +26,12 @@ public class App {
     public UserManager userManager() {
         UserManager userManager = new FSUserManager();
         return userManager;
+    }
+    
+    @Bean
+    public WebsiteManager webManager() {
+        WebsiteManager webManager = new WebsiteManager();
+        return webManager;
     }
 
     /**

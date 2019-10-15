@@ -23,4 +23,12 @@ public class ResourceResolver {
 		}
 		return file;
 	}
+	
+	public static File getSites() {
+		File file = new File(BASE_DIR + "/" + "sitelist.json");
+		if (!file.getParentFile().exists()) {
+			file.getParentFile().mkdirs();
+		}
+		return file;
+	}
 }
