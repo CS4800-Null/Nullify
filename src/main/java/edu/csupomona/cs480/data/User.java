@@ -1,5 +1,8 @@
 package edu.csupomona.cs480.data;
 
+import org.springframework.util.DigestUtils;
+import java.nio.charset.StandardCharsets;
+
 import java.util.Date;
 
 
@@ -7,19 +10,28 @@ import java.util.Date;
  * The basic user object.
  */
 
-public class User {
-    /** Websites the user have accounts for */
+public class User
+{
+    /**
+     * Websites the user have accounts for
+     */
     private String UserName;
-    /** Email of the user*/
+    /**
+     * Email of the user
+     */
     private String email;
-    /** Password of the user*/
+    /**
+     * Password of the user
+     */
     private String password;
-    /** List of Websites the user have accounts for**/
+    /**
+     * List of Websites the user have accounts for
+     **/
     private String UserSites[];
-
+    
     public String getUserName()
     {
-    	return UserName;
+        return UserName;
     }
     
     public void setUserName(String UserName)
@@ -29,7 +41,7 @@ public class User {
     
     public String getEmail()
     {
-    	return email;
+        return email;
     }
     
     public void setEmail(String email)
@@ -39,20 +51,22 @@ public class User {
     
     public String getPassword()
     {
-    	return password;
+        return password;
     }
-
+    
     public void setPassword(String password)
     {
-    	this.password = DigestUtils.sha256Hex(password);
+        this.password = password;//DigestUtils.sha256(password);
     }
     
     public String[] getUserSites()
     {
-    	return UserSites;
+        return UserSites;
     }
-    		
+    
     public void setUserSites(String[] UserSites)
     {
-    	this.UserSites = UserSites;
+        this.UserSites = UserSites;
     }
+    
+}

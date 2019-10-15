@@ -4,6 +4,7 @@ package edu.csupomona.cs480.controller;
 
 import java.util.List;
 
+import edu.csupomona.cs480.data.WebsiteUtility;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
-import edu.csupomona.cs480.data.provider.UserManager;
+import edu.csupomona.cs480.data.provider.*;
 
 import edu.csupomona.cs480.data.JSONReader;
 import edu.csupomona.cs480.data.Website;
@@ -44,9 +45,17 @@ public class WebController {
 	 * In our project, all the beans are defined in
 	 * the {@link App} class.
 	 */
-	@Autowired
-	private UserManager userManager;
-
+	//@Autowired
+	//private UserManager userManager;
+	private WebsiteUtility websiteUtility = new WebsiteUtility();
+	
+	@RequestMapping(value = "/search/{website}", method = RequestMethod.GET)
+	Website search(@PathVariable("website") String website)
+	{
+		Website site = websiteUtility.search(website);
+		return site;
+	}
+	
 }
 	/**
 	 * This is a simple example of how the HTTP API works.

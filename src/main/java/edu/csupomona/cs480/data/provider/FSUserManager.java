@@ -77,7 +77,7 @@ public class FSUserManager implements UserManager {
 	@Override
 	public void updateUser(User user) {
 		UserMap userMap = getUserMap();
-		userMap.put(user.getId(), user);
+		//userMap.put(user.getId(), user);
 		persistUserMap(userMap);
 	}
 

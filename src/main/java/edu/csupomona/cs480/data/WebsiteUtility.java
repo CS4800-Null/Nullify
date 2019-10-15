@@ -1,6 +1,13 @@
 package edu.csupomona.cs480.data;
 
 import java.io.IOException;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import edu.csupomona.cs480.util.ResourceResolver;
 
 public class WebsiteUtility
 {
@@ -30,15 +37,15 @@ public class WebsiteUtility
 	//filtering method (can delete or not)
 
 	//search method
-		public Website searchWebsite(Website[] site, String webName)
-	{
-		int i = 0;
-		while(site[i].getWebsite() != webName)
+		public Website search(String webName)
 		{
-			i++;
+			int i = 0;
+			while (sitelist[i].getWebsite() != webName)
+			{
+				i++;
+			}
+			return sitelist[i];
 		}
-		return site[i];	
-	}
 
 	//image file retrieval method
 }

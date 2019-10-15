@@ -87,7 +87,8 @@
 	};
 	mobileMenuOutsideClick();
 
-	var carousel = function() {
+
+	/*var carousel = function() {
 		$('.home-slider').owlCarousel({
 	    loop:true,
 	    autoplay: true,
@@ -112,7 +113,7 @@
 		});
 
 	};
-	carousel();
+	carousel();*/
 
 	
 
