@@ -8510,6 +8510,49 @@ textarea.form-control {
     .categories li.active a, .sidelink li.active a {
       color: #000000;
       font-style: italic; }
+/** this is where dropdown menu stuff is that we made */
+.dropdown {
+    float: left;
+    background-color: #FFF0F5;
+    width: 100%;
+}
+
+.dropDiv {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #FFF0F5;
+    height: 200px;
+    width: 100%;
+    z-index: 1;
+}
+
+.dropdownContent a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdownContent a:hover {background-color: #fff8dc;}
+
+.dropDiv:hover .dropdownContent {
+    display: block;
+    z-index: 1;
+    height: 200px;
+}
+
+.dropDiv:hover .dropdown {
+    background-color: #fff8dc;
+}
+
+
+
 
 #ftco-loader {
   position: fixed;
