@@ -45,6 +45,16 @@ public class WebsiteUtility
 	}
 
 	//filtering method (can delete or not)
+	public Website filter(Website website) 
+	{
+		for (int i = 0; i < sitelist.length; i++) {
+			if (website.canDelete()) {
+				return sitelist[i];
+			}
+		}
+		return website;
+	}
+	
 
 	//search method
 		public Website search(String webName)
