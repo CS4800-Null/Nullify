@@ -45,14 +45,16 @@ public class WebsiteUtility
 	}
 
 	//filtering method (can delete or not)
-	public Website filter(Website website) 
+	public Website[] filter(Website website) 
 	{
+		Website[] filtered = new Website[sitelist.length];
+		
 		for (int i = 0; i < sitelist.length; i++) {
 			if (website.canDelete()) {
-				return sitelist[i];
+				filtered[i] = sitelist[i];
 			}
 		}
-		return website;
+		return filtered;
 	}
 	
 
