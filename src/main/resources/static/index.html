@@ -24,11 +24,12 @@
     <link rel="stylesheet" href="css/style.css">
 
 	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-	  <script src="/js/website-control-ajs.js"></script>
+	  <script src="js/website-control-ajs.js"></script>
   </head>
   <body>
 
 	<div id="colorlib-page">
+		<!-- NAVBAR -->
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
 			<h1 id="colorlib-logo"><a href="index.html">Nullify</a></h1>
@@ -39,18 +40,6 @@
 					<li><a href="https://github.com/CS4800-Null/Nullify">Github</a></li>
 				</ul>
 			</nav>
-			<div><input type="text" ng-model="searchWebsite" placeholder="Website Name"></div>
-			<div><button id="query_id" ng-click="search()">Search</button></div>
-			<tr>
-				<td>Website</td>
-				<td>URL</td>
-				<td>Image</td>
-			</tr>
-			<tr>
-				<td><label>{{foundsite.website}}</label></td>
-				<td><label>{{foundsite.domain}}</label></td>
-				<!--<td><label>{{foundsite.image}}</label></td>-->
-			</tr>
 
 <!-- Drop down menu -->
 
@@ -62,6 +51,14 @@
 						<a href=page.html>Option3</a>
 					</div>
 				</div>
+
+			<form action="search.html">
+				<input type="text" ng-model="website" id="query_id" name="website" placeholder="Search for website name...">
+				<input type="submit" value="Search" ng-click="search(website)">
+			</form>
+
+
+			<!--ENTER NAVBAR INFO HERE-->
 		</aside> <!-- END COLORLIB-ASIDE -->
 
 		<div id="colorlib-main">
@@ -325,7 +322,7 @@
 					</div>
 				</div>
 			</section>
-	    <footer class="ftco-footer ftco-bg-dark ftco-section">
+	    <footer class="ftco-footer ftco-bg-dark ftco-section" style="margin-bottom: 0">
 	      <div class="container px-md-5">
 	        <!--<div class="row mb-5">
 	          <div class="col-md">
@@ -378,6 +375,7 @@
 	    </footer>
 
 		</div><!-- END COLORLIB-MAIN -->
+
 
 	</div><!-- END COLORLIB-PAGE -->
 

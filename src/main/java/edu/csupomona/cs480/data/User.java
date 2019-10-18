@@ -9,7 +9,6 @@ import java.util.Date;
 /**
  * The basic user object.
  */
-
 public class User
 {
     /**

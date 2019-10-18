@@ -12,9 +12,9 @@ webapp.controller('UserCtrl', function ($scope, $http) {
     }
 
     $scope.search = function() {
-        $http.get("search/" + $scope.searchWebsite)
+        $http.post("search" + "?website=" + $scope.foundwebsite)
             .success(function(data){
-                $scope.foundsite = data;
+                $scope.foundwebsite = data;
             });
     }
 

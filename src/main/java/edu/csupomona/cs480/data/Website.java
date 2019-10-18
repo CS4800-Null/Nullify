@@ -3,7 +3,7 @@ package edu.csupomona.cs480.data;
 import javax.persistence.*;
 
 @Entity
-public class Website
+public class Website implements Comparable<Website>
 {
 	@Id
 	private String website;
@@ -12,6 +12,7 @@ public class Website
 	private String changepassword;
 	private String deleteaccount;
 	private String notes;
+	private String image;
 
 	public Website(String wn, String d, String s, String cp, String da, String n)
 	{
@@ -21,6 +22,7 @@ public class Website
 		changepassword = cp;
 		deleteaccount = da;
 		notes = n;
+		image = "/logos/resized/" + website.toLowerCase() + ".jpg";
 	}
 
 	public String getWebsite()
@@ -52,9 +54,20 @@ public class Website
 	{
 		return notes;
 	}
+	
+	public String getImage()
+	{
+		return image;
+	}
 
 	public boolean canDelete()
 	{
 		return (deleteaccount == "null");
+	}
+	
+	@Override
+	public int compareTo(Website other)
+	{
+		return this.website.compareTo(other.getWebsite());
 	}
 }

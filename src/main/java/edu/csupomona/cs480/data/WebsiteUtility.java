@@ -38,6 +38,11 @@ public class WebsiteUtility
 	}
 
 	//sorting method
+	public Website[] sort()
+	{
+		Arrays.sort(sitelist);
+		return sitelist;
+	}
 
 	//filtering method (can delete or not)
 

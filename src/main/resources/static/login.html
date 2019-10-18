@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-	<script src="/js/website-control-ajs.js"></script>
+	<script src="js/website-control-ajs.js"></script>
 </head>
 
 <body>
@@ -32,8 +32,10 @@
 				<li><a href="https://github.com/CS4800-Null/Nullify">Github</a></li>
 			</ul>
 		</nav>
-		<div><input type="text" ng-model="searchWebsite" placeholder="Website Name"></div>
-		<div><button id="query_id" ng-click="search()">Search</button></div>
+		<form action="search">
+			<input type="text" name="website" placeholder="Search for website name...">
+			<input type="submit" value="Search">
+		</form>
 	</aside>
 </div>
 

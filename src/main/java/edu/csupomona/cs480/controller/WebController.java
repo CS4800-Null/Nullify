@@ -52,8 +52,8 @@ public class WebController {
 	private WebsiteUtility websiteUtility = new WebsiteUtility();
 	
 	
-	@RequestMapping(value = "/search/{website}", method = RequestMethod.GET)
-	Website search(@PathVariable("website") String website)
+	@RequestMapping(value = "/search?website={websitename}", method = RequestMethod.GET)
+	Website search(@PathVariable("websitename") String website)
 	{
 		Website site = websiteUtility.search(website);
 		return site;
