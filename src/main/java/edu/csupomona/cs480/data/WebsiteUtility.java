@@ -59,7 +59,7 @@ public class WebsiteUtility
 	//search method
 		public Website search(String webName)
 		{
-			int idx = Arrays.binarySearch(sitelist, webName);
+			int idx = Arrays.binarySearch(sort(), webName);
 			if(idx == -1)
 				return null;
 			return sitelist[idx];

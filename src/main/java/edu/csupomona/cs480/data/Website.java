@@ -14,7 +14,7 @@ public class Website implements Comparable<Website>
 	private String notes;
 	private String image;
 
-	public Website(String wn, String d, String s, String cp, String da, String n)
+	public Website(String wn, String d, String s, String cp, String da, String n, String i)
 	{
 		website = wn;
 		domain = d;
@@ -22,7 +22,7 @@ public class Website implements Comparable<Website>
 		changepassword = cp;
 		deleteaccount = da;
 		notes = n;
-		image = "/logos/resized/" + website.toLowerCase() + ".jpg";
+		image = i;
 	}
 
 	public String getWebsite()
