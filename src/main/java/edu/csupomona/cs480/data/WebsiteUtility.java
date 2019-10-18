@@ -28,7 +28,7 @@ public class WebsiteUtility
 		}
 		catch(Exception e)
 		{
-			System.out.println("file issue");
+			System.out.println("file issue in sitelist.json");
 		}
 	}
 	
@@ -54,6 +54,4 @@ public class WebsiteUtility
 				return null;
 			return sitelist[idx];
 		}
-
-	//image file retrieval method
 }
