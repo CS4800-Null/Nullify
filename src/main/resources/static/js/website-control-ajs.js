@@ -7,7 +7,7 @@ webapp.controller('NullifyController', function ($scope, $http) {
     $scope.loadWebsite = function() {
         $http.get("/")
             .success(function(data){
-                $scope.users = data;
+                $scope.sitelist = data;
             });
     }
 
@@ -17,6 +17,27 @@ webapp.controller('NullifyController', function ($scope, $http) {
                 if(data == null)
                     $scope.foundwebsite = "Website not found";
                 $scope.foundwebsite = data;
+            });
+    }
+
+    $scope.sortAZ = function() {
+        $http.get("/sortAZ/")
+            .success(function(data){
+                $scope.sitelistAZ = data;
+            });
+    }
+
+    $scope.sortZA = function() {
+        $http.get("/sortZA/")
+            .success(function(data){
+                $scope.sitelistZA = data;
+            });
+    }
+
+    $scope.showCanDelete = function() {
+        $http.get("/candelete/")
+            .success(function(data){
+                $scope.canBeDeleted = data;
             });
     }
 

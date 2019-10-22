@@ -66,20 +66,34 @@ public class WebsiteUtility
 	}
 
 	//sorting method
-	public Website[] sort()
+	public Website[] sortAZ()
 	{
 		Arrays.sort(sitelist);
 		return sitelist;
 	}
 	
+	public Website[] sortZA()
+	{
+		Website[] sorted = sortAZ();
+		for(int i = 0; i < sorted.length/2; i++){
+			
+			Website w = sorted[i];
+			sorted[i] = sorted[sorted.length - 1 - i];
+			sorted[sorted.length - 1 - i] = w;
+		}
+		return sorted;
+	}
+	
 	//filtering method (can delete or not)
-	public Website[] filter(Website website)
+	public Website[] filter()
 	{
 		Website[] filtered = new Website[sitelist.length];
-		
+		int idx = 0;
 		for (int i = 0; i < sitelist.length; i++) {
-			if (website.canDelete()) {
-				filtered[i] = sitelist[i];
+			if (sitelist[i].canDelete())
+			{
+				filtered[idx] = sitelist[i];
+				idx++;
 			}
 		}
 		return filtered;
@@ -89,7 +103,6 @@ public class WebsiteUtility
 	//search method
 		public Website search(String webName)
 		{
-			webName = webName.toLowerCase();
 			System.out.println("search() reached websiteutility for search query: " + webName);
 			for(Website w:sitelist)
 			{
