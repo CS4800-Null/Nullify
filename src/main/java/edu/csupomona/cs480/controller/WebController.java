@@ -52,16 +52,35 @@ public class WebController {
 	private WebsiteUtility websiteUtility = new WebsiteUtility();
 	
 	
-	@RequestMapping(value = "/search?website={websitename}", method = RequestMethod.GET)
-	Website search(@PathVariable("websitename") String website)
+	@RequestMapping(value = "/search/{websitename}", method = RequestMethod.GET)
+	Website search(@PathVariable("websitename") String websitename)
 	{
-		Website site = websiteUtility.search(website);
+		System.out.println("search() reached webcontroller");
+		Website site = websiteUtility.search(websitename);
+		if(site == null)
+			System.out.println("website not found");
 		return site;
 	}
 	
 	@RequestMapping(value = "/websites", method = RequestMethod.GET)
 	List<Website> listWebsites() {
 		return webManager.listWebsites();
+	}
+
+	/**
+	 * This method returns the contents of our sitelist.JSON file
+	 * after parsing the file to an array of Website objects
+	 * Uses GSON external library for parsing JSON data to custom Website Object
+	 * Author - Jay Chen
+	 * @returns Website[] read from sitelist.json (for use in handling website data)
+	 */
+	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
+	Website[] sitelist() throws java.io.IOException
+	{
+		JSONReader js = new JSONReader();
+		String file = "src/main/resources/static/sitelist.json";
+		Website[] web = js.readWebsiteJSON(file);
+		return web;
 	}
 	
 }

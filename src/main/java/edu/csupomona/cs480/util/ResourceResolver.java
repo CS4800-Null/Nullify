@@ -24,8 +24,8 @@ public class ResourceResolver {
 		return file;
 	}
 	
-	public static File getSites() {
-		File file = new File(BASE_DIR + "/" + "sitelist.json");
+	public static File getSiteFile() {
+		File file = new File("src/main/resources/static/sitelist.json");
 		if (!file.getParentFile().exists()) {
 			file.getParentFile().mkdirs();
 		}

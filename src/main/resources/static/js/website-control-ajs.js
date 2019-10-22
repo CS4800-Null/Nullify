@@ -2,7 +2,7 @@
 
 var webapp = angular.module('webapp', []);
 
-webapp.controller('UserCtrl', function ($scope, $http) {
+webapp.controller('NullifyController', function ($scope, $http) {
 
     $scope.loadWebsite = function() {
         $http.get("/")
@@ -11,9 +11,11 @@ webapp.controller('UserCtrl', function ($scope, $http) {
             });
     }
 
-    $scope.search = function() {
-        $http.post("search" + "?website=" + $scope.foundwebsite)
+    $scope.searchWebsites = function() {
+        $http.get("/search/" + $scope.websitesearch)
             .success(function(data){
+                if(data == null)
+                    $scope.foundwebsite = "Website not found";
                 $scope.foundwebsite = data;
             });
     }

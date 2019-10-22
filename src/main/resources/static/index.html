@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="webapp">
   <head>
     <title>Nullify</title>
     <meta charset="utf-8">
@@ -26,20 +26,19 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 	  <script src="js/website-control-ajs.js"></script>
   </head>
-  <body>
+  <body ng-controller="NullifyController">
+  <div id="colorlib-page">
+	  <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+	  <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
+		  <h1 id="colorlib-logo"><a href="index.html">Nullify</a></h1>
+		  <nav id="colorlib-main-menu" role="navigation">
+			  <ul>
+				  <li class="colorlib-active"><a href="index.html">Home</a></li>
+				  <li><a href="login.html">Login</a></li>
+				  <li><a href="https://github.com/CS4800-Null/Nullify">Github</a></li>
+			  </ul>
+		  </nav>
 
-	<div id="colorlib-page">
-		<!-- NAVBAR -->
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-			<h1 id="colorlib-logo"><a href="index.html">Nullify</a></h1>
-			<nav id="colorlib-main-menu" role="navigation">
-				<ul>
-					<li class="colorlib-active"><a href="index.html">Home</a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="https://github.com/CS4800-Null/Nullify">Github</a></li>
-				</ul>
-			</nav>
 
 <!-- Drop down menu -->
 
@@ -52,17 +51,25 @@
 					</div>
 				</div>
 
-			<form action="search.html">
-				<input type="text" ng-model="website" id="query_id" name="website" placeholder="Search for website name...">
-				<input type="submit" value="Search" ng-click="search(website)">
-			</form>
-
-
 			<!--ENTER NAVBAR INFO HERE-->
 		</aside> <!-- END COLORLIB-ASIDE -->
 
 		<div id="colorlib-main">
+			<!--insert searched website if found-->
 			<section class="ftco-section-2">
+				<div align="center">
+				<!--<form action="search" target="dummyframe">
+						<input type="text" id="query_id" ng-model="websitesearch" placeholder="Search for website name...">
+						<input type="submit" value="Search" ng-click="search()">
+				</form>-->
+					<input type="text" id="query_id" ng-model="websitesearch" placeholder="Search for website name...">
+					<button ng-click="searchWebsites()">Search</button>
+				</div>
+				<div><h3>result-->{{foundwebsite.domain}}</h3></div>
+			</section>
+			<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>
+
+				<section class="ftco-section-2">
 				<div class="photograhy">
 					<div class="row no-gutters">
 						<div class="col-md-4 ftco-animate">

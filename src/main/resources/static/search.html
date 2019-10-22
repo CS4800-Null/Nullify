@@ -26,7 +26,7 @@
 	<script src="js/website-control-ajs.js"></script>
 	<title>Search</title>
 </head>
-<body>
+<body ng-app="webapp" ng-controller="NullifyController">
 <div id="colorlib-page">
 	<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 	<aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
@@ -38,9 +38,9 @@
 				<li><a href="https://github.com/CS4800-Null/Nullify">Github</a></li>
 			</ul>
 		</nav>
-		<form action="js/website-control-ajs.js">
+		<form action="search.html">
 			<input type="text" name="website" placeholder="Search for website name...">
-			<input type="submit" value="Search">
+			<input type="submit" value="Search" ng-click="search(website)">
 		</form>
 
 
@@ -51,10 +51,10 @@
 			<div class="photography" >
 				<div class="row no-gutters">
 					<div class="col-md-4 ftco-animate">
-						<a id="query_id" href={{foundwebsite}}.getDomain() class="photography-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url({{foundwebsite}}.getImage())">
+						<a id="query_id" href={{foundwebsite.domain}} class="photography-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url({{foundwebsite.image}})">
 							<div class="overlay"></div>
 							<div class="text text-center">
-								<h3><label>foundwebsite.getImage()</label>></h3>
+								<h3><label>{{foundwebsite.website}}</label>></h3>
 							</div>
 						</a>
 					</div>
