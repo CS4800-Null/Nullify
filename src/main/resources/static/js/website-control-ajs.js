@@ -5,7 +5,7 @@ var webapp = angular.module('webapp', []);
 webapp.controller('NullifyController', function ($scope, $http) {
 
     $scope.loadWebsite = function() {
-        $http.get("/")
+        $http.get("/websites")
             .success(function(data){
                 $scope.sitelist = data;
             });

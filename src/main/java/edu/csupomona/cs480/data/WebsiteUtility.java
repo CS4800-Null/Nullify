@@ -60,9 +60,9 @@ public class WebsiteUtility
 		}
 	}
 	
-	public ArrayList<Website> allWebsites()
+	public Website[] allWebsites()
 	{
-		return new ArrayList<Website>(Arrays.asList(sitelist));
+		return sitelist;
 	}
 
 	//sorting method

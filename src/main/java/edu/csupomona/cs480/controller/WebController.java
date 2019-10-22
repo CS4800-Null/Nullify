@@ -63,8 +63,9 @@ public class WebController {
 	}
 	
 	@RequestMapping(value = "/websites", method = RequestMethod.GET)
-	List<Website> listWebsites() {
-		return webManager.listWebsites();
+	Website[] listWebsites() {
+		System.out.println("website lister reached webcontroller");
+		return websiteUtility.sortAZ();
 	}
 
 	/**
