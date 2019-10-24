@@ -68,6 +68,12 @@ public class WebController {
 		return websiteUtility.sortAZ();
 	}
 
+	@RequestMapping(value = "/sortZA", method = RequestMethod.GET)
+	Website[] listWebsitesZA() {
+		System.out.println("website lister ZA reached webcontroller");
+		return websiteUtility.sortZA();
+	}
+
 	/**
 	 * This method returns the contents of our sitelist.JSON file
 	 * after parsing the file to an array of Website objects
