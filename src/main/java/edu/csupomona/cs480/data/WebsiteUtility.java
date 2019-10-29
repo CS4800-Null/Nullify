@@ -1,11 +1,14 @@
 package edu.csupomona.cs480.data;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import com.google.gson.stream.JsonWriter;
 import edu.csupomona.cs480.util.ResourceResolver;
 import javassist.NotFoundException;
 
@@ -123,4 +126,15 @@ public class WebsiteUtility
 			}
 			return web;
 		}
+		// add website
+	public void addWebsite(Website website){
+		File jsonFile = new File(sitelistPath);
+
+		// this will append information to our json file
+		try {
+			// insert Json Writer
+		} catch (IOException e) {
+			System.out.println("Something went wrong with the addWebsite");
+		}
+	}
 }
