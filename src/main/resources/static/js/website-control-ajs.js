@@ -42,13 +42,24 @@ webapp.controller('NullifyController', function ($scope, $http) {
     }
 
 
-    /*$scope.addUser = function() {
-        $http.post("cs480/user/" + $scope.new_id + "?name=" + $scope.new_name + "&major=" + $scope.new_major)
+		"website": "Airbnb",
+		"domain": "https://www.airbnb.com",
+		"settings": "https://www.airbnb.com/account-settings",
+		"changepassword": "https://www.airbnb.com/account-settings/login-and-security",
+		"deleteaccount": "https://www.airbnb.com/help/article/240/how-do-i-deactivate-or-delete-my-account",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/airbnb.jpg"
+
+
+// this is the add website button
+    $scope.addWebsite = function() {
+    // pretty sure cs480/scss/sitelist.json SSSHHHHOUUULD?? add the information to the json
+        $http.post("cs480/scss/sitelist.json" + $scope.new_id + "?name=" + $scope.new_name + "&major=" + $scope.new_major)
             .success(function(data){
                 $scope.loadUsers();
             });
     }
-
+/*
     $scope.deleteUser = function(userId) {
         $http.delete("cs480/user/" + userId)
             .success(function(data){

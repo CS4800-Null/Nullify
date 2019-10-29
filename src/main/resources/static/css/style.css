@@ -8519,7 +8519,7 @@ textarea.form-control {
 }
 
 .dropDiv {
-    color: #77AA88;
+    color: #FFFFFF;
     position: relative;
     display: inline-block;
     width: 100%;
@@ -8536,7 +8536,7 @@ textarea.form-control {
 
 .dropdownContent a {
     display: block;
-    text-align: center;
+    text-align: center; /** was center */
     padding: 14px 16px;
     text-decoration: none;
 }
