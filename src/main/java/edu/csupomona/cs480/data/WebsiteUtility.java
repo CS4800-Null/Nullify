@@ -73,14 +73,14 @@ public class WebsiteUtility
 		return sitelist;
 	}
 	
-	public Website[] sortZA()
+	public ArrayList<Website> sortZA()
 	{
-		Website[] sorted = (Website[])sortAZ().toArray();
-		for(int i = 0; i < sorted.length/2; i++){
+		ArrayList<Website> sorted = sortAZ();
+		for(int i = 0; i < sorted.size()/2; i++){
 			
-			Website w = sorted[i];
-			sorted[i] = sorted[sorted.length - 1 - i];
-			sorted[sorted.length - 1 - i] = w;
+			Website w = sorted.get(i);
+			sorted.set(i, sorted.get(sorted.size() - 1 - i));
+			sorted.set(sorted.size() - 1 - i, w);
 		}
 		return sorted;
 	}

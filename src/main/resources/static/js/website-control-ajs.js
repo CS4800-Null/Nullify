@@ -16,7 +16,8 @@ webapp.controller('NullifyController', function ($scope, $http) {
             .success(function(data){
                 if(data == null)
                     $scope.foundwebsite = "Website not found";
-                $scope.foundwebsite = data;
+                else
+                    $scope.foundwebsite = data;
             });
     }
 

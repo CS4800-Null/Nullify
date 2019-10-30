@@ -70,7 +70,7 @@ public class WebController {
 	}
 
 	@RequestMapping(value = "/sortZA", method = RequestMethod.GET)
-	Website[] listWebsitesZA() {
+	ArrayList<Website> listWebsitesZA() {
 		System.out.println("website lister ZA reached webcontroller");
 		return websiteUtility.sortZA();
 	}
