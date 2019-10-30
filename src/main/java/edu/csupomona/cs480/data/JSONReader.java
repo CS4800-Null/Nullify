@@ -23,5 +23,19 @@ public class JSONReader
 		}
 		return web;
 	}
+	
+	public void writeWebsiteJSON(String filepath, Website web)
+	{
+		try
+		{
+			String jsonString = gson.toJson(web);
+			FileWriter fileWriter = new FileWriter(filepath);
+			fileWriter.write(jsonString);
+			fileWriter.close();
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 }
 

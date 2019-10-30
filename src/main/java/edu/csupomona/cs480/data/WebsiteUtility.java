@@ -127,13 +127,15 @@ public class WebsiteUtility
 			return web;
 		}
 		// add website
-	public void addWebsite(Website website){
+	public void addWebsite(Website website) {
 		File jsonFile = new File(sitelistPath);
 
 		// this will append information to our json file
 		try {
-			// insert Json Writer
-		} catch (IOException e) {
+			JSONReader js = new JSONReader();
+			js.writeWebsiteJSON(sitelistPath, website);
+			// inserted Json Writer above
+		} catch (Exception e) {
 			System.out.println("Something went wrong with the addWebsite");
 		}
 	}
