@@ -7695,7 +7695,7 @@ h1, h2, h3, h4, h5,
         color: #fff;
         opacity: 1; } }
   .photography-entry:hover .overlay, .photography-entry:focus .overlay {
-    opacity: .7; }
+    opacity: .85; }
   .photography-entry:hover .text, .photography-entry:focus .text {
     opacity: 1; }
 
