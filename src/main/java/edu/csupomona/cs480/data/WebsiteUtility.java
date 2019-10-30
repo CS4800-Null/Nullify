@@ -14,7 +14,7 @@ import javassist.NotFoundException;
 
 public class WebsiteUtility
 {
-	private Website[] sitelist; //this stores the data from our JSON file
+	private ArrayList<Website> sitelist; //this stores the data from our JSON file
 	private static final ObjectMapper JSON = new ObjectMapper();
 	private final String sitelistPath = "src/main/resources/static/sitelist.json";
 
@@ -28,7 +28,7 @@ public class WebsiteUtility
 		try
 		{
 			JSONReader js = new JSONReader();
-			sitelist = js.readWebsiteJSON(file);
+			sitelist = new ArrayList<Website>(Arrays.asList(js.readWebsiteJSON(file)));
 		}
 		catch(Exception e)
 		{
@@ -63,21 +63,22 @@ public class WebsiteUtility
 		}
 	}
 	
-	public Website[] allWebsites()
+	public ArrayList<Website> allWebsites()
 	{
 		return sitelist;
 	}
+	
 
 	//sorting method
-	public Website[] sortAZ()
+	public ArrayList<Website> sortAZ()
 	{
-		Arrays.sort(sitelist);
+		Arrays.sort(sitelist.toArray());
 		return sitelist;
 	}
 	
 	public Website[] sortZA()
 	{
-		Website[] sorted = sortAZ();
+		Website[] sorted = (Website[])sortAZ().toArray();
 		for(int i = 0; i < sorted.length/2; i++){
 			
 			Website w = sorted[i];
@@ -90,12 +91,12 @@ public class WebsiteUtility
 	//filtering method (can delete or not)
 	public Website[] filter()
 	{
-		Website[] filtered = new Website[sitelist.length];
+		Website[] filtered = new Website[sitelist.size()];
 		int idx = 0;
-		for (int i = 0; i < sitelist.length; i++) {
-			if (sitelist[i].canDelete())
+		for (int i = 0; i < sitelist.size(); i++) {
+			if (sitelist.get(i).canDelete())
 			{
-				filtered[idx] = sitelist[i];
+				filtered[idx] = sitelist.get(i);
 				idx++;
 			}
 		}
@@ -129,11 +130,11 @@ public class WebsiteUtility
 		// add website
 	public void addWebsite(Website website) {
 		File jsonFile = new File(sitelistPath);
-
+		sitelist.add(website);
 		// this will append information to our json file
 		try {
 			JSONReader js = new JSONReader();
-			js.writeWebsiteJSON(sitelistPath, website);
+			js.writeWebsiteJSON(sitelistPath, sitelist);
 			// inserted Json Writer above
 		} catch (Exception e) {
 			System.out.println("Something went wrong with the addWebsite");

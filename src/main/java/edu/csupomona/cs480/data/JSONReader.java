@@ -1,6 +1,7 @@
 package edu.csupomona.cs480.data;
 
 import java.io.*;
+import java.util.ArrayList;
 
 import com.google.gson.*;
 
@@ -24,7 +25,7 @@ public class JSONReader
 		return web;
 	}
 	
-	public void writeWebsiteJSON(String filepath, Website web)
+	public void writeWebsiteJSON(String filepath, ArrayList<Website> web)
 	{
 		try
 		{
