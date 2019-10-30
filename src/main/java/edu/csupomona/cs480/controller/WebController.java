@@ -2,6 +2,7 @@
 // Hi its me, ya boi
 package edu.csupomona.cs480.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.csupomona.cs480.data.WebsiteUtility;
@@ -63,9 +64,9 @@ public class WebController {
 	}
 	
 	@RequestMapping(value = "/websites", method = RequestMethod.GET)
-	Website[] listWebsites() {
+	ArrayList<Website> listWebsites() {
 		System.out.println("website lister reached webcontroller");
-		return (Website[])websiteUtility.sortAZ().toArray();
+		return websiteUtility.sortAZ();
 	}
 
 	@RequestMapping(value = "/sortZA", method = RequestMethod.GET)

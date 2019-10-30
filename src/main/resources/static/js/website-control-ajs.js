@@ -42,15 +42,6 @@ webapp.controller('NullifyController', function ($scope, $http) {
     }
 
 
-		"website": "Airbnb",
-		"domain": "https://www.airbnb.com",
-		"settings": "https://www.airbnb.com/account-settings",
-		"changepassword": "https://www.airbnb.com/account-settings/login-and-security",
-		"deleteaccount": "https://www.airbnb.com/help/article/240/how-do-i-deactivate-or-delete-my-account",
-		"notes": "Must contact support to delete",
-		"image": "/logos/resized/airbnb.jpg"
-
-
 // this is the add website button
     $scope.addWebsite = function() {
     // pretty sure cs480/scss/sitelist.json SSSHHHHOUUULD?? add the information to the json
