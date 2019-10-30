@@ -1,14 +1,11 @@
 package edu.csupomona.cs480.data;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.File;
-import java.io.PrintWriter;
 import java.util.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.google.gson.stream.JsonWriter;
 import edu.csupomona.cs480.util.ResourceResolver;
 import javassist.NotFoundException;
 
