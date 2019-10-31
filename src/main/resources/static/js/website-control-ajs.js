@@ -46,7 +46,8 @@ webapp.controller('NullifyController', function ($scope, $http) {
 // this is the add website button
     $scope.addWebsite = function() {
     // pretty sure cs480/scss/sitelist.json SSSHHHHOUUULD?? add the information to the json
-        $http.post("cs480/scss/sitelist.json" + $scope.new_id + "?name=" + $scope.new_name + "&major=" + $scope.new_major)
+    // add the rest of the fields
+        $http.post("cs480/newwebsite" + $scope.websitenameinput + "?domain=" + $scope.domainnameinput + "&settings=" + $scope.changepasswordpageinput + "&changepassword=")
             .success(function(data){
                 $scope.loadUsers();
             });
