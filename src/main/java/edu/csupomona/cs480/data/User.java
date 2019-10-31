@@ -27,6 +27,10 @@ public class User
      * List of Websites the user have accounts for
      **/
     private String UserSites[];
+    /**
+     * List of tags the user made
+     **/
+    private String TaggedSites[];
     
     public String getUserName()
     {
@@ -66,6 +70,15 @@ public class User
     public void setUserSites(String[] UserSites)
     {
         this.UserSites = UserSites;
+    }
+    public String[] getUserTagSites()
+    {
+        return TaggedSites;
+    }
+    
+    public void setUserTagSites(String[] TaggedSites)
+    {
+        this.TaggedSites = TaggedSites;
     }
     
 }
