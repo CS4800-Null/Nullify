@@ -127,6 +127,7 @@ public class WebsiteUtility
 		
 		// add website
 	public void addWebsite(Website website) {
+		System.out.println("reached add website in web controller");
 		File jsonFile = new File(sitelistPath);
 		sitelist.add(website);
 		// this will append information to our json file

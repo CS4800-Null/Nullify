@@ -92,6 +92,24 @@ public class WebController {
 	}
 	
 }
+/**
+ * This method will update our sitelist with newly added websites
+ */
+Website addWebsite(
+		@PathVariable("newwebsite") String wesite,
+		@RequestParam("domain") String domain,
+		@RequestParam(value = "settings", required = false) String settings,
+		@RequestParam(value = "changepassword", required = false) String changepassword,
+		@RequestParam(value = "deleteaccount", required = false) String deleteaccount,
+		@RequestParam(value = "notes", required = false) String notes  /** ,
+		@RequestParam(value = "image", required = false) Image image     this is here for when we can add an image  */
+
+		) {
+	Website website = new Website(wesite, domain, settings, changepassword, deleteaccount, notes, );
+	websiteUtility.addWebsite(website);
+	return website;
+}
+
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
