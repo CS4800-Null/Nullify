@@ -139,4 +139,11 @@ public class WebsiteUtility
 			System.out.println("Something went wrong with the addWebsite");
 		}
 	}
+	
+	//create a category to put websites in
+	public void addToCategory(Website website) {
+
+		File taggedWebsites = new File(sitelistPath);
+		sitelist.add(website);
+	}
 }
