@@ -10,14 +10,14 @@ public class JSONReader
 	Gson gson = new Gson();
 
 	public JSONReader() {	}
-
-	public Website[] readWebsiteJSON(String filepath)
+	
+	public Website[] readWebsiteJSON(File filepath)
 	{
 		Website[] web = null;
 		try
 		{
-			InputStream is = this.getClass().getResourceAsStream(filepath);
-			web = gson.fromJson(new FileReader(new File(filepath)), Website[].class);
+			InputStream is = this.getClass().getResourceAsStream(filepath.toString());
+			web = gson.fromJson(new FileReader(filepath), Website[].class);
 		} catch (FileNotFoundException e)
 		{
 			e.printStackTrace();

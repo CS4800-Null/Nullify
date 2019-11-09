@@ -147,7 +147,7 @@
 		"changepassword": "https://www.paypal.com/myaccount/settings/security",
 		"deleteaccount": "https://www.paypal.com/myaccount/settings/account/close",
 		"notes": "Cannot be deleted, only closed",
-		"image": "/logos/resized/github.jpg"
+		"image": "/logos/resized/paypal.jpg"
 	},
 	
 	{
