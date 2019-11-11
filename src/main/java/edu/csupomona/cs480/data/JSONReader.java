@@ -10,15 +10,33 @@ public class JSONReader
 	Gson gson = new Gson();
 
 	public JSONReader() {	}
-
-	public Website[] readWebsiteJSON(String filepath)
+	
+	public String readTextFile(InputStream inputStream) {
+		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+		
+		byte buf[] = new byte[1024];
+		int len;
+		try {
+			while ((len = inputStream.read(buf)) != -1) {
+				outputStream.write(buf, 0, len);
+			}
+			outputStream.close();
+			inputStream.close();
+		} catch (IOException e) {
+		
+		}
+		return outputStream.toString();
+	}
+	
+	public Website[] readWebsiteJSON(InputStream filepath)
 	{
+		String file = readTextFile(filepath);
 		Website[] web = null;
 		try
 		{
-			InputStream is = this.getClass().getResourceAsStream(filepath);
-			web = gson.fromJson(new FileReader(new File(filepath)), Website[].class);
-		} catch (FileNotFoundException e)
+			//InputStream is = this.getClass().getResourceAsStream(file);
+			web = gson.fromJson(file, Website[].class);
+		} catch (Exception e)
 		{
 			e.printStackTrace();
 		}

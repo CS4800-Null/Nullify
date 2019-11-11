@@ -1,13 +1,11 @@
-
-// Hi its me, ya boi
 package edu.csupomona.cs480.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
-import edu.csupomona.cs480.data.WebsiteUtility;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import edu.csupomona.cs480.data.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
-import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.*;
-
-import edu.csupomona.cs480.data.JSONReader;
-import edu.csupomona.cs480.data.Website;
-
-//import org.apache.commons.math3.random;
-//import org.apache.commons.math3.random.RandomData;
 
 
 /**
@@ -66,6 +57,13 @@ public class WebController {
 	@RequestMapping(value = "/websites", method = RequestMethod.GET)
 	ArrayList<Website> listWebsites() {
 		System.out.println("website lister reached webcontroller");
+		websiteUtility = new WebsiteUtility();
+		return websiteUtility.sortAZ();
+	}
+	
+	@RequestMapping(value = "/sortAZ", method = RequestMethod.GET)
+	ArrayList<Website> listWebsitesAZ() {
+		System.out.println("website lister reached webcontroller");
 		return websiteUtility.sortAZ();
 	}
 
@@ -74,7 +72,7 @@ public class WebController {
 		System.out.println("website lister ZA reached webcontroller");
 		return websiteUtility.sortZA();
 	}
-
+//
 	/**
 	 * This method returns the contents of our sitelist.JSON file
 	 * after parsing the file to an array of Website objects
@@ -87,7 +85,9 @@ public class WebController {
 	{
 		JSONReader js = new JSONReader();
 		String file = "src/main/resources/static/sitelist.json";
-		Website[] web = js.readWebsiteJSON(file);
+		InputStream inputStream;
+		inputStream = new ByteArrayInputStream(file.getBytes(StandardCharsets.UTF_8)); // had to convert string to input stream to work
+		Website[] web = js.readWebsiteJSON(inputStream);
 		return web;
 	}
 
@@ -217,115 +217,20 @@ public class WebController {
 	{
         return "My website list";
 	}
-	
-	/**
-	 * Webpage for settings page
-	 *
-	 * Author - Jeane Taruc
-	 * //@param ??
-	 */
-/**	@RequestMapping(value = "/settings", method = RequestMethod.GET)
-	public String settings()
-	{
-        return "Settings";
-	}
-	
-	/**
-	 * This API prints a string.
-	 *
-	 * Author - Jay Chen
-	 * //@param ??
-	 */
-/**	@RequestMapping(value = "/teststring", method = RequestMethod.GET)
-	public String teststring()
-	{
-        return "useless string";
-	}
-
-    /**
-     * This method prints out "Hello World"
-     *
-     * Author - Romulo Supnet
-     * //@param ??
-     */
-/**    @RequestMapping(value = "/printHelloWorld", method = RequestMethod.GET)
-    public String printHelloWorld()
-    {
-        return "Hello World";
-    }
-    
-    /**
-     * This prints out "Random Stuff"
-     *
-     * Author - Jeane Taruc
-     * //@param ??
-     */
- /**   @RequestMapping(value = "/printRandomStuff", method = RequestMethod.GET)
-    public String printRandomStuff()
-    {
-        return "Random Stuff";
-    }
-	/**
-	 * This method prints out "It works"
-	 *
-	 * Author - Jonathan Dunsmore
-	 * //@param none
-	 */
-/**	@RequestMapping(value = "/doesItWork", method = RequestMethod.GET)
-	public String doesItWork()
-	{
-		return "It works";
-	}
-
+}
+//
 	/**
 	 * This method returns the contents of our sitelist.JSON file
 	 * after parsing the file to an array of Website objects
 	 * Uses GSON external library for parsing JSON data to custom Website Object
-	 * Author - Jay Chen
+	 * used for testing contents of sitelist
 	 * @returns Website[] read from sitelist.json (for use in handling website data)
-	 */
-/**	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
+	 *
+	@RequestMapping(value = "/sitelist", method = RequestMethod.GET)
 	Website[] sitelist() throws java.io.IOException
 	{
 		JSONReader js = new JSONReader();
 		String file = "src/main/resources/static/sitelist.json";
 		Website[] web = js.readWebsiteJSON(file);
 		return web;
-	}
-
-	/**
-	 * This method returns a parsed HTML string
-	 * takes HTML into string
-	 * parses using JSOUP to Document
-	 * Uses JSOUP to get parts of HTML and convert to strings
-	 * @return prints out title and body of sample string
-	 */
-/**	@RequestMapping(value = "/parseHTML", method = RequestMethod.GET)
-	public String parseHTML(){
-		String htmlString = "<html><head><title>My title</title></head>"
-				+ "<body>Body content</body></html>";
-
-		Document doc = Jsoup.parse(htmlString);
-		String title = doc.title();
-		String body = doc.body().text();
-
-		return ("Title: " + title + " Body: " + body);
-	}
-	
-	/**
-	 * Returns Random int
-	 * Jeane Taruc
-	 * @return
-	 */
-/**	@RequestMapping(value = "/RandomInt", method = RequestMethod.GET)
-	public int RandomInt(){
-		return nextInt(1,5);
-	}
-
-	private int nextInt(int i, int j) {
-		return 0;
-	}
-
-}
-
-**/
+	}*/

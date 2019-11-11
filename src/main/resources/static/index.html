@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
 
-    <!--NOT USED <link rel="stylesheet" href="css/magnific-popup.css">-->
-
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
@@ -35,6 +33,7 @@
 			  <ul>
 				  <li class="colorlib-active"><a href="index.html">Home</a></li>
 				  <li><a href="login.html">Login</a></li>
+				  <li><a href="addSite.html">Add Website</a></li>
 				  <li><a href="https://github.com/CS4800-Null/Nullify">Github</a></li>
 			  </ul>
 		  </nav>
@@ -43,11 +42,10 @@
 <!-- Drop down menu -->
 
 				<div class="dropDiv">
-					<br class="dropdown">Dropdown</a></br>
+					<div class="dropdown">Filter/Sort</div>
 					<div class="dropdownContent">
-						<a href=Index.html>Sort A-Z</a>
-						<a href=ZtoA.html>Sort Z-A</a>
-						<a href=addSite.html>Add Website</a>
+						<a href="index.html" ng-click="sortAZ()">Sort A-Z</a>
+						<a href="ZtoA.html" ng-click="sortZA()">Sort Z-A</a>
 					</div>
 				</div>
 
@@ -58,30 +56,41 @@
 			<!--insert searched website if found-->
 			<section class="ftco-section-2">
 				<div align="center">
-				<!--<form action="search" target="dummyframe">
-						<input type="text" id="query_id" ng-model="websitesearch" placeholder="Search for website name...">
-						<input type="submit" value="Search" ng-click="search()">
-				</form>-->
 					<input type="text" id="query_id" ng-model="websitesearch" placeholder="Search for website name...">
 					<button ng-click="searchWebsites()">Search</button>
 				</div>
-				<div><h3>result-->{{foundwebsite.domain}}</h3></div>
+				<!--<div><h3>result = {{foundwebsite.domain}}</h3></div>-->
+				<!--Only searched website will display-->
+				<div class="col-md-4 ftco-animate" id="searchedfor">
+					<div class="photography-entry img d-flex justify-content-center align-items-center" style="background-image: url({{foundwebsite.image}});">
+						<div class="overlay"></div>
+						<div class="text text-center">
+							<h3><a href="{{foundwebsite.domain}}">{{foundwebsite.website}}</a></h3>
+							<span class="tag"><a href="{{foundwebsite.settings}}">Settings</a></span>
+							<br><span class="tag"><a href="{{foundwebsite.changepassword}}">Change Password</a></span>
+							<br><span class="tag"><a href="{{foundwebsite.deleteaccount}}">Delete Account</a></span>
+							<p class="text">{{foundwebsite.notes}}</p>
+						</div>
+					</div>
+				</div>
 			</section>
 			<!--<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>-->
 
 			<section class="ftco-section-2">
 				<div class="photograhy">
 					<div class="row no-gutters">
-						<div class="col-md-4 ftco-animate" ng-repeat="websiteobject in sitelist">
+
+						<!--All websites will display-->
+						<div class="col-md-4 ftco-animate" ng-repeat="websiteobject in sitelist" id="allwebsites">
 							<div class="photography-entry img d-flex justify-content-center align-items-center" style="background-image: url({{websiteobject.image}});">
 								<div class="overlay"></div>
-								<div class="text text-center">
-									<h3><a href="{{websiteobject.domain}}">{{websiteobject.website}}</a></h3>
-									<span class="tag"><a href="{{websiteobject.settings}}">Settings</a></span>
-									<br><span class="tag"><a href="{{websiteobject.changepassword}}">Change Password</a></span>
-									<br><span class="tag"><a href="{{websiteobject.deleteaccount}}">Delete Account</a></span>
-									<p class="text">{{websiteobject.notes}}</p>
-								</div>
+									<div class="text text-center">
+										<h3><a href="{{websiteobject.domain}}">{{websiteobject.website}}</a></h3>
+											<span class="tag"><a href="{{websiteobject.settings}}">Settings</a></span>
+											<br><span class="tag"><a href="{{websiteobject.changepassword}}">Change Password</a></span>
+											<br><span class="tag"><a href="{{websiteobject.deleteaccount}}">Delete Account</a></span>
+											<p class="text">{{websiteobject.notes}}</p>
+									</div>
 							</div>
 						</div>
 					</div>

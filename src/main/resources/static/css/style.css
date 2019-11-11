@@ -8516,13 +8516,13 @@ textarea.form-control {
 /** this is where dropdown menu stuff is that we made */
 .dropdown {
     float: left;
-    color: #FFFFFF;
-    background-color: #000000;
+    color: #000;
+    background-color: #767676;
     width: 100%;
 }
 
 .dropDiv {
-    color: #FFFFFF;
+    color: #767676;
     position: relative;
     display: inline-block;
     width: 100%;
@@ -8531,8 +8531,8 @@ textarea.form-control {
 .dropdownContent {
     display: none;
     position: absolute;
-    background-color: #FFF0F5;
-    height: 200px;
+    background-color: #000;
+    height: inherit;
     width: 100%;
     z-index: 1;
 }
@@ -8540,20 +8540,20 @@ textarea.form-control {
 .dropdownContent a {
     display: block;
     text-align: center; /** was center */
-    padding: 14px 16px;
+    padding: 4px 4px;
     text-decoration: none;
 }
 
-.dropdownContent a:hover {background-color: #fff8dc;}
+.dropdownContent a:hover {background-color: #000;}
 
 .dropDiv:hover .dropdownContent {
     display: block;
     z-index: 1;
-    height: 200px;
+    height: auto;
 }
 
 .dropDiv:hover .dropdown {
-    background-color: #FFFFFF;
+    background-color: #767676;
 }
 
 

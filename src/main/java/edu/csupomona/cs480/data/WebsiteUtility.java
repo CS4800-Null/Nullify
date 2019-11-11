@@ -1,8 +1,10 @@
 package edu.csupomona.cs480.data;
 
-import java.io.IOException;
-import java.io.File;
+import java.io.*;
 import java.util.*;
+
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ClassPathResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -13,23 +15,36 @@ public class WebsiteUtility
 {
 	private ArrayList<Website> sitelist; //this stores the data from our JSON file
 	private static final ObjectMapper JSON = new ObjectMapper();
-	private final String sitelistPath = "src/main/resources/static/sitelist.json";
-
+	private final String sitelistString = "static/sitelist.json";
+	private File sitelistFile;
+	
 	public WebsiteUtility()
 	{
-		getData(sitelistPath);
+		Resource resource = new ClassPathResource(sitelistString);
+		//sitelistFile = new File("");
+		InputStream input = null;
+		try
+		{
+			System.out.println("HELP");
+			input = resource.getInputStream();
+		//	sitelistFile = resource.getFile();
+		//	input = this.getClass().getResourceAsStream(sitelistString);
+		}
+		catch(Exception io)   {   System.out.println("failure at sitelist.json rsrc access");    }
+		getData(input);
 	}
 
-	public void getData(String file)
+	public void getData(InputStream file)
 	{
 		try
 		{
+			System.out.println("reached getData()");
 			JSONReader js = new JSONReader();
 			sitelist = new ArrayList<Website>(Arrays.asList(js.readWebsiteJSON(file)));
 		}
 		catch(Exception e)
 		{
-			System.out.println("file issue in " + file);
+			System.out.println("getData file issue in " + file.toString());
 		}
 	}
 	
@@ -60,6 +75,8 @@ public class WebsiteUtility
 		}
 	}
 	
+	
+	
 	public ArrayList<Website> allWebsites()
 	{
 		return sitelist;
@@ -69,8 +86,21 @@ public class WebsiteUtility
 	//sorting method
 	public ArrayList<Website> sortAZ()
 	{
-		Arrays.sort(sitelist.toArray());
-		return sitelist;
+		int n = sitelist.size();
+		ArrayList<Website> az = sitelist;
+		for (int j = 1; j < n; j++) {
+			Website key = az.get(j);
+			int i = j-1;
+			while ( (i > -1) && ( az.get(i).compareTo(key) > 0 ) )
+			{
+				az.set(i+1, az.get(i));
+				i--;
+			}
+			az.set(i+1, key);
+		}
+		return az;
+		//Arrays.sort(sitelist.toArray());
+		//return sitelist;
 	}
 	
 	public ArrayList<Website> sortZA()
@@ -113,9 +143,9 @@ public class WebsiteUtility
 			return null;
 		}
 		
-		private WebsiteMap siteMap()
+		public WebsiteMap siteMap()
 		{
-			getData(sitelistPath);
+			//getData(sitelistFile);
 			WebsiteMap web = new WebsiteMap();
 			System.out.println("search() reached siteMap()");
 			for(Website w:sitelist)
@@ -127,7 +157,7 @@ public class WebsiteUtility
 
 		// add website
 	public void addWebsite(Website website) {
-		System.out.println("reached the fucking webcontroller addwebsite");
+		System.out.println("reached webcontroller addwebsite");
 		WebsiteMap websiteMap = getWebsiteJSON();
 		websiteMap.put(website.getWebsite(), website);
 		persistWebsiteMap(websiteMap);
@@ -136,8 +166,5 @@ public class WebsiteUtility
 	
 	//create a category to put websites in
 	public void addToCategory(Website website) {
-
-		File taggedWebsites = new File(sitelistPath);
-		sitelist.add(website);
 	}
 }

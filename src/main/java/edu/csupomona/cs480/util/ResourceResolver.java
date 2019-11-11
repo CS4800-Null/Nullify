@@ -25,7 +25,7 @@ public class ResourceResolver {
 	}
 	
 	public static File getSiteFile() {
-		File file = new File("src/main/resources/static/sitelist.json");
+		File file = new File(BASE_DIR + "/" + "site-map.json");
 		if (!file.getParentFile().exists()) {
 			file.getParentFile().mkdirs();
 		}

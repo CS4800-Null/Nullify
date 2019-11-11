@@ -7,7 +7,8 @@ webapp.controller('NullifyController', function ($scope, $http) {
     $scope.loadWebsite = function() {
         $http.get("/websites")
             .success(function(data){
-                $scope.sitelist = data;
+                //if($scope.sitelist != null)
+                    $scope.sitelist = data;
             });
     }
 
@@ -21,17 +22,21 @@ webapp.controller('NullifyController', function ($scope, $http) {
             });
     }
 
+    //$scope.addFave = function() {
+    //    $http.get("/addFave/" + $scope.websites)
+    //}
+
     $scope.sortAZ = function() {
         $http.get("/sortAZ/")
             .success(function(data){
-                $scope.sitelistAZ = data;
+                $scope.sitelist = data;
             });
     }
 
     $scope.sortZA = function() {
         $http.get("/sortZA/")
             .success(function(data){
-                $scope.sitelistZA = data;
+                $scope.sitelist = data;
             });
     }
 
