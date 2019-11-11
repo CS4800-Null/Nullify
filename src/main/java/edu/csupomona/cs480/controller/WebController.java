@@ -94,16 +94,16 @@ public class WebController {
 	/**
 	 * This method will update our sitelist with newly added websites
 	 */
-
 	@RequestMapping(value = "/cs480/newwebsite/{websitenameinput}", method = RequestMethod.POST)
 	Website addWebsite(
-			@PathVariable("websitenameinput") String wesite,
+			@PathVariable("website") String wesite,
 			@RequestParam("domain") String domain,
 			@RequestParam(value = "settings", required = false) String settings,
 			@RequestParam(value = "changepassword", required = false) String changepassword,
 			@RequestParam(value = "deleteaccount", required = false) String deleteaccount,
 			@RequestParam(value = "notes", required = false) String notes,
 			@RequestParam(value = "image", required = false) String image) {
+		System.out.println("inside addwebsite webcontroller");
 		image = "static/logos/resized/zzimg.jpg";
 		Website website = new Website(wesite, domain, settings, changepassword, deleteaccount, notes, image);
 		websiteUtility.addWebsite(website);

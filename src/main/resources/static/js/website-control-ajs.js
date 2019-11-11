@@ -46,11 +46,12 @@ webapp.controller('NullifyController', function ($scope, $http) {
 // this is the add website button
     $scope.addWebsite = function() {
     // add the rest of the fields
-        $http.post("cs480/newwebsite" + $scope.websitenameinput + "?domain=" + $scope.domainnameinput + "&settings=" + $scope.changepasswordpageinput + "&changepassword=" + $scope.deleteaccountpageinput + "&deleteaccount=" + $scope.notesinput + "&notes") //  + $scope.imageinput + "&image"
+        $http.post("/cs480/" + $scope.websitenameinput + "?domain=" + $scope.domainnameinput + "&settings=" + $scope.changepasswordpageinput + "&changepassword=" + $scope.deleteaccountpageinput + "&deleteaccount=" + $scope.notesinput + "&notes") //  + $scope.imageinput + "&image"
             .success(function(data){
                 $scope.loadUsers();
             });
     }
+
 /*
     $scope.deleteUser = function(userId) {
         $http.delete("cs480/user/" + userId)

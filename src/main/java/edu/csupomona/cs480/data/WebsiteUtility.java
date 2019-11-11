@@ -124,21 +124,15 @@ public class WebsiteUtility
 			}
 			return web;
 		}
-		
+
 		// add website
 	public void addWebsite(Website website) {
-		System.out.println("reached add website in web controller");
-		File jsonFile = new File(sitelistPath);
-		sitelist.add(website);
-		// this will append information to our json file
-		try {
-			JSONReader js = new JSONReader();
-			js.writeWebsiteJSON(sitelistPath, sitelist);
-			// inserted Json Writer above
-		} catch (Exception e) {
-			System.out.println("Something went wrong with the addWebsite");
-		}
+		System.out.println("reached the fucking webcontroller addwebsite");
+		WebsiteMap websiteMap = getWebsiteJSON();
+		websiteMap.put(website.getWebsite(), website);
+		persistWebsiteMap(websiteMap);
 	}
+
 	
 	//create a category to put websites in
 	public void addToCategory(Website website) {
