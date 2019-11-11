@@ -2,7 +2,7 @@ package edu.csupomona.cs480.controller;
 
 import java.util.ArrayList;
 
-import edu.csupomona.cs480.data.WebsiteUtility;
+import edu.csupomona.cs480.data.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,11 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
-import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.*;
-
-import edu.csupomona.cs480.data.JSONReader;
-import edu.csupomona.cs480.data.Website;
 
 
 /**
@@ -57,6 +53,13 @@ public class WebController {
 	
 	@RequestMapping(value = "/websites", method = RequestMethod.GET)
 	ArrayList<Website> listWebsites() {
+		System.out.println("website lister reached webcontroller");
+		websiteUtility = new WebsiteUtility();
+		return websiteUtility.sortAZ();
+	}
+	
+	@RequestMapping(value = "/sortAZ", method = RequestMethod.GET)
+	ArrayList<Website> listWebsitesAZ() {
 		System.out.println("website lister reached webcontroller");
 		return websiteUtility.sortAZ();
 	}

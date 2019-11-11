@@ -21,6 +21,10 @@ webapp.controller('NullifyController', function ($scope, $http) {
             });
     }
 
+    //$scope.addFave = function() {
+    //    $http.get("/addFave/" + $scope.websites)
+    //}
+
     $scope.sortAZ = function() {
         $http.get("/sortAZ/")
             .success(function(data){

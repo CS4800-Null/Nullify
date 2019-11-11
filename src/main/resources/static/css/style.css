@@ -8522,7 +8522,7 @@ textarea.form-control {
 }
 
 .dropDiv {
-    color: #000;
+    color: #767676;
     position: relative;
     display: inline-block;
     width: 100%;
@@ -8532,7 +8532,7 @@ textarea.form-control {
     display: none;
     position: absolute;
     background-color: #000;
-    height: 200px;
+    height: inherit;
     width: 100%;
     z-index: 1;
 }
@@ -8540,7 +8540,7 @@ textarea.form-control {
 .dropdownContent a {
     display: block;
     text-align: center; /** was center */
-    padding: 14px 16px;
+    padding: 4px 4px;
     text-decoration: none;
 }
 
@@ -8549,11 +8549,11 @@ textarea.form-control {
 .dropDiv:hover .dropdownContent {
     display: block;
     z-index: 1;
-    height: 200px;
+    height: auto;
 }
 
 .dropDiv:hover .dropdown {
-    background-color: #000;
+    background-color: #767676;
 }
 
 

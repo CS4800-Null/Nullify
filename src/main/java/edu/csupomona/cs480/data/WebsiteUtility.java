@@ -21,28 +21,30 @@ public class WebsiteUtility
 	public WebsiteUtility()
 	{
 		Resource resource = new ClassPathResource(sitelistString);
-		sitelistFile = new File("");
-		InputStream input;
+		//sitelistFile = new File("");
+		InputStream input = null;
 		try
 		{
+			System.out.println("HELP");
 			input = resource.getInputStream();
-			sitelistFile = resource.getFile();
+		//	sitelistFile = resource.getFile();
+		//	input = this.getClass().getResourceAsStream(sitelistString);
 		}
-		catch(IOException io)   {   System.out.println("failure at sitelist.json rsrc access");    }
-		getData(sitelistFile);
+		catch(Exception io)   {   System.out.println("failure at sitelist.json rsrc access");    }
+		getData(input);
 	}
 
-	public void getData(File file)
+	public void getData(InputStream file)
 	{
 		try
 		{
+			System.out.println("reached getData()");
 			JSONReader js = new JSONReader();
 			sitelist = new ArrayList<Website>(Arrays.asList(js.readWebsiteJSON(file)));
 		}
 		catch(Exception e)
 		{
-			
-			System.out.println("file issue in " + file);
+			System.out.println("getData file issue in " + file.toString());
 		}
 	}
 	
@@ -141,9 +143,9 @@ public class WebsiteUtility
 			return null;
 		}
 		
-		private WebsiteMap siteMap()
+		public WebsiteMap siteMap()
 		{
-			getData(sitelistFile);
+			//getData(sitelistFile);
 			WebsiteMap web = new WebsiteMap();
 			System.out.println("search() reached siteMap()");
 			for(Website w:sitelist)
