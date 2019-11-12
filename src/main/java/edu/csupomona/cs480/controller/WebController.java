@@ -95,7 +95,7 @@ public class WebController {
 	 * This method will update our sitelist with newly added websites
 	 */
 	@RequestMapping(value = "/cs480/newwebsite/{websitenameinput}", method = RequestMethod.POST)
-	Website addWebsite(
+	Website addWebsiteAlt(
 			@PathVariable("website") String wesite,
 			@RequestParam("domain") String domain,
 			@RequestParam(value = "settings", required = false) String settings,
@@ -109,6 +109,27 @@ public class WebController {
 		websiteUtility.addWebsite(website);
 		return website;
 	}
+
+	/**
+	 * This method will update our sitelist with newly added websites
+	 * This will be hardcoded in to add a single website as proof that the java works
+	 */
+	@RequestMapping(value = "/hardAdd}", method = RequestMethod.POST)
+	Website addWebsite() {
+		System.out.println("inside addwebsite webcontroller");
+		String image, wesite, domain,settings,changepassword,deleteaccount,notes;
+		wesite = "Google";
+		domain = "www.google.com";
+		settings = "settings text";
+		changepassword = "password text";
+		deleteaccount = "delete account text";
+		notes = "notes text";
+		image = "static/logos/resized/zzimg.jpg";
+		Website website = new Website(wesite, domain, settings, changepassword, deleteaccount, notes, image);
+		websiteUtility.addWebsite(website);
+		return website;
+	}
+
 }
 
 	/**
