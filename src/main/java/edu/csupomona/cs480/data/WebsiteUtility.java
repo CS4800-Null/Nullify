@@ -25,7 +25,6 @@ public class WebsiteUtility
 		InputStream input = null;
 		try
 		{
-			System.out.println("HELP");
 			input = resource.getInputStream();
 		//	sitelistFile = resource.getFile();
 		//	input = this.getClass().getResourceAsStream(sitelistString);
@@ -140,7 +139,7 @@ public class WebsiteUtility
 				if(w.getWebsite().equalsIgnoreCase(webName))
 					return w;
 			}
-			return null;
+			return new Website("Not found", "", "", "", "", "", "logos/resized/zzimg.jpg");
 		}
 		
 		public WebsiteMap siteMap()

@@ -38,14 +38,22 @@
 			  </ul>
 		  </nav>
 
+		  <p>
+		  <div class="websitesearchbar" >
+				  <input type="text" id="query_id" ng-model="websitesearch" placeholder="website name...">
+		  <button ng-click="searchWebsites()"><span ng-init="searchedfor=false">Search</span></button>
+		  </div>
 
 <!-- Drop down menu -->
-
+		  <p>
+		  <p>
+		  <p>
 				<div class="dropDiv">
 					<div class="dropdown">Filter/Sort</div>
 					<div class="dropdownContent">
-						<a href="index.html" ng-click="sortAZ()">Sort A-Z</a>
-						<a href="ZtoA.html" ng-click="sortZA()">Sort Z-A</a>
+						<a href="" ng-click="sortAZ()">Sort A-Z</a>
+						<a href="" ng-click="sortZA()">Sort Z-A</a>
+						<a href="" ng-click="showCanDelete()">Show Deletable Sites</a>
 					</div>
 				</div>
 
@@ -54,17 +62,14 @@
 
 		<div id="colorlib-main">
 			<!--insert searched website if found-->
-			<section class="ftco-section-2">
-				<div align="center">
-					<input type="text" id="query_id" ng-model="websitesearch" placeholder="Search for website name...">
-					<button ng-click="searchWebsites()">Search</button>
-				</div>
 				<!--<div><h3>result = {{foundwebsite.domain}}</h3></div>-->
 				<!--Only searched website will display-->
-				<div class="col-md-4 ftco-animate" id="searchedfor">
+			<div ng-show="searchedfor">
+			<section class="ftco-section-2" >
+				<div class="col-md-4 ftco-animate" >
 					<div class="photography-entry img d-flex justify-content-center align-items-center" style="background-image: url({{foundwebsite.image}});">
-						<div class="overlay"></div>
-						<div class="text text-center">
+						<div class="overlay" ></div>
+						<div class="text text-center" >
 							<h3><a href="{{foundwebsite.domain}}">{{foundwebsite.website}}</a></h3>
 							<span class="tag"><a href="{{foundwebsite.settings}}">Settings</a></span>
 							<br><span class="tag"><a href="{{foundwebsite.changepassword}}">Change Password</a></span>
@@ -74,6 +79,7 @@
 					</div>
 				</div>
 			</section>
+			</div>
 			<!--<iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe"></iframe>-->
 
 			<section class="ftco-section-2">
@@ -98,44 +104,6 @@
 			</section>
 	    <footer class="ftco-footer ftco-bg-dark ftco-section" style="margin-bottom: 0">
 	      <div class="container px-md-5">
-	        <!--<div class="row mb-5">
-	          <div class="col-md">
-	            <div class="ftco-footer-widget mb-4 ml-md-4">
-	              <h2 class="ftco-heading-2">Category</h2>
-	              <ul class="list-unstyled categories">
-	                <li><a href="#">Photography <span>(6)</span></a></li>
-	                <li><a href="#">Hellfire <span>(8)</span></a></li>
-	                <li><a href="#">Technology <span>(2)</span></a></li>
-	                <li><a href="#">Travel <span>(2)</span></a></li>
-	              </ul>
-	            </div>
-	          </div>
-	          <div class="col-md">
-	             <div class="ftco-footer-widget mb-4">
-	              <h2 class="ftco-heading-2">Archives</h2>
-	              <ul class="list-unstyled categories">
-	              	<li><a href="#">November 2018 <span>(105)</span></a></li>
-	              	<li><a href="#">October 2018 <span>(212)</span></a></li>
-	                <li><a href="#">September 2018 <span>(150)</span></a></li>
-	                <li><a href="#">August 2018 <span>(100)</span></a></li>
-	                <li><a href="#">July 2018 <span>(200)</span></a></li>
-	              </ul>
-	            </div>
-	          </div>
-	          <div class="col-md">
-	            <div class="ftco-footer-widget mb-4">
-	            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-	            	<div class="block-23 mb-3">
-		              <ul>
-		                <li><span class="icon icon-map-marker"></span><span class="text">203 DOOM St. Mountain View, San Francisco, California, AUS</span></li>
-		                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-		                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@domain.com</span></a></li>
-		              </ul>
-		            </div>
-	            </div>
-	          </div>
-	        </div>-->
-
 		      <div class="row">
 	          <div class="col-md-12">
 

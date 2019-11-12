@@ -4,6 +4,8 @@ var webapp = angular.module('webapp', []);
 
 webapp.controller('NullifyController', function ($scope, $http) {
 
+    //$scope.searchedfor = false;
+
     $scope.loadWebsite = function() {
         $http.get("/websites")
             .success(function(data){
@@ -13,12 +15,10 @@ webapp.controller('NullifyController', function ($scope, $http) {
     }
 
     $scope.searchWebsites = function() {
+        $scope.searchedfor = true;
         $http.get("/search/" + $scope.websitesearch)
             .success(function(data){
-                if(data == null)
-                    $scope.foundwebsite = "Website not found";
-                else
-                    $scope.foundwebsite = data;
+                $scope.foundwebsite = data;
             });
     }
 
@@ -29,14 +29,14 @@ webapp.controller('NullifyController', function ($scope, $http) {
     $scope.sortAZ = function() {
         $http.get("/sortAZ/")
             .success(function(data){
-                $scope.sitelist = data;
+                $scope.sitelistAZ = data;
             });
     }
 
     $scope.sortZA = function() {
         $http.get("/sortZA/")
             .success(function(data){
-                $scope.sitelist = data;
+                $scope.sitelistZA = data;
             });
     }
 
