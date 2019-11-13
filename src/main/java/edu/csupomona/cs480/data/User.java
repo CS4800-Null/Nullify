@@ -1,9 +1,12 @@
 package edu.csupomona.cs480.data;
 
+import org.hibernate.mapping.Map;
 import org.springframework.util.DigestUtils;
 import java.nio.charset.StandardCharsets;
-
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+
 
 
 /**
@@ -11,6 +14,9 @@ import java.util.Date;
  */
 public class User
 {
+	
+	HashMap<String, ArrayList<Website>> folder = new HashMap<String, ArrayList<Website>>();
+	
     /**
      * Websites the user have accounts for
      */
@@ -71,14 +77,27 @@ public class User
     {
         this.UserSites = UserSites;
     }
-    public String[] getUserTagSites()
+
+    public void addFolder(String name) 
     {
-        return TaggedSites;
+    	if (folder.containsKey(name)) 
+    	{
+    		System.out.println("Error, " + name + " already exists");
+    	} 
+    	else
+    	{
+    		folder.put(name, new ArrayList<Website>());
+    	}
     }
     
-    public void setUserTagSites(String[] TaggedSites)
+    public void addItem(String name, Website item) 
     {
-        this.TaggedSites = TaggedSites;
+    	if (folder.get(name) == null)
+    	{
+    		folder.put(name, new ArrayList<Website>());
+    	}
+    	
+    	folder.get(name).add(item);
     }
     
 }
