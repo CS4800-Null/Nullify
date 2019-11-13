@@ -74,14 +74,11 @@ public class WebsiteUtility
 		}
 	}
 	
-	
-	
 	public ArrayList<Website> allWebsites()
 	{
 		return sitelist;
 	}
 	
-
 	//sorting method
 	public ArrayList<Website> sortAZ()
 	{
@@ -119,7 +116,8 @@ public class WebsiteUtility
 	{
 		Website[] filtered = new Website[sitelist.size()];
 		int idx = 0;
-		for (int i = 0; i < sitelist.size(); i++) {
+		for (int i = 0; i < sitelist.size(); i++) 
+		{
 			if (sitelist.get(i).canDelete())
 			{
 				filtered[idx] = sitelist.get(i);
@@ -131,40 +129,34 @@ public class WebsiteUtility
 	
 
 	//search method
-		public Website search(String webName)
+	public Website search(String webName)
+	{
+		System.out.println("search() reached websiteutility for search query: " + webName);
+		for(Website w:sitelist)
 		{
-			System.out.println("search() reached websiteutility for search query: " + webName);
-			for(Website w:sitelist)
-			{
-				if(w.getWebsite().equalsIgnoreCase(webName))
-					return w;
-			}
-			return new Website("Not found", "", "", "", "", "", "logos/resized/zzimg.jpg");
-		}
+			if(w.getWebsite().equalsIgnoreCase(webName))
+				return w;
+		}			return new Website("Not found", "", "", "", "", "", "logos/resized/zzimg.jpg");
+	}
 		
-		public WebsiteMap siteMap()
+	public WebsiteMap siteMap()
+	{
+		//getData(sitelistFile);
+		WebsiteMap web = new WebsiteMap();
+		System.out.println("search() reached siteMap()");
+		for(Website w:sitelist)
 		{
-			//getData(sitelistFile);
-			WebsiteMap web = new WebsiteMap();
-			System.out.println("search() reached siteMap()");
-			for(Website w:sitelist)
-			{
-				web.put(w.getWebsite(),w);
-			}
-			return web;
+			web.put(w.getWebsite(),w);
 		}
+		return web;
+	}
 
-		// add website
-	public void addWebsite(Website website) {
+	// add website
+	public void addWebsite(Website website) 
+	{
 		System.out.println("reached webcontroller addwebsite");
 		WebsiteMap websiteMap = getWebsiteJSON();
 		websiteMap.put(website.getWebsite(), website);
 		persistWebsiteMap(websiteMap);
-	}
-
-	
-	//create a category to put websites in
-	public void addToCategory(Website website) {
-
 	}
 }
