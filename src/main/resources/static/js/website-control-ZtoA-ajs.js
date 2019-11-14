@@ -12,10 +12,9 @@ webapp.controller('NullifyControllerZtoA', function ($scope, $http) {
     }
 
     $scope.searchWebsites = function() {
+        $scope.searchedfor = true;
         $http.get("/search/" + $scope.websitesearch)
             .success(function(data){
-                if(data == null)
-                    $scope.foundwebsite = "Website not found";
                 $scope.foundwebsite = data;
             });
     }

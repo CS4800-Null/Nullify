@@ -5,17 +5,16 @@ var webapp = angular.module('webappCanDelete', []);
 webapp.controller('NullifyControllerCanDelete', function ($scope, $http) {
 
     $scope.loadWebsiteCanDelete = function() {
-        $http.get("/candelete/")
+        $http.get("/candelete")
             .success(function(data){
                 $scope.sitelist = data;
             });
     }
 
     $scope.searchWebsites = function() {
+        $scope.searchedfor = true;
         $http.get("/search/" + $scope.websitesearch)
             .success(function(data){
-                if(data == null)
-                    $scope.foundwebsite = "Website not found";
                 $scope.foundwebsite = data;
             });
     }

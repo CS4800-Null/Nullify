@@ -20,14 +20,19 @@ public class WebsiteUtility
 	
 	public WebsiteUtility()
 	{
+		createSitelist();
+	}
+	
+	public void createSitelist()
+	{
 		Resource resource = new ClassPathResource(sitelistString);
 		//sitelistFile = new File("");
 		InputStream input = null;
 		try
 		{
 			input = resource.getInputStream();
-		//	sitelistFile = resource.getFile();
-		//	input = this.getClass().getResourceAsStream(sitelistString);
+			//	sitelistFile = resource.getFile();
+			//	input = this.getClass().getResourceAsStream(sitelistString);
 		}
 		catch(Exception io)   {   System.out.println("failure at sitelist.json rsrc access");    }
 		getData(input);
@@ -112,17 +117,16 @@ public class WebsiteUtility
 	}
 	
 	//filtering method (can delete or not)
-	public Website[] canDelete()
+	public ArrayList<Website> canDelete()
 	{
-		Website[] filtered = new Website[sitelist.size()];
+		ArrayList<Website> filtered = new ArrayList<Website>();
+		ArrayList<Website> sorted = sortAZ();
 		int idx = 0;
-		for (int i = 0; i < sitelist.size(); i++) 
+		for (int i = 0; i < sorted.size(); i++)
 		{
-			if (sitelist.get(i).canDelete())
+			if (sorted.get(i).canDelete())
 			{
-				filtered[idx] = sitelist.get(i);
-				System.out.println(sitelist.get(i));
-				idx++;
+				filtered.add(sorted.get(i));
 			}
 		}
 		return filtered;
@@ -132,6 +136,7 @@ public class WebsiteUtility
 	//search method
 	public Website search(String webName)
 	{
+		//createSitelist();
 		System.out.println("search() reached websiteutility for search query: " + webName);
 		for(Website w:sitelist)
 		{
