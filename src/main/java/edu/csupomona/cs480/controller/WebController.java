@@ -132,6 +132,6 @@ public class WebController {
 	@RequestMapping(value = "/candelete", method = RequestMethod.GET)
 	Website[] listWebsitesCD() {
 		System.out.println("website lister candelete reached webcontroller");
-		return websiteUtility.filter();
+		return websiteUtility.canDelete();
 	}
 }

@@ -112,7 +112,7 @@ public class WebsiteUtility
 	}
 	
 	//filtering method (can delete or not)
-	public Website[] filter()
+	public Website[] canDelete()
 	{
 		Website[] filtered = new Website[sitelist.size()];
 		int idx = 0;
@@ -121,6 +121,7 @@ public class WebsiteUtility
 			if (sitelist.get(i).canDelete())
 			{
 				filtered[idx] = sitelist.get(i);
+				System.out.println(sitelist.get(i));
 				idx++;
 			}
 		}

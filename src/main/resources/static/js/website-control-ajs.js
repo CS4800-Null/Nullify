@@ -4,7 +4,6 @@ var webapp = angular.module('webapp', []);
 
 webapp.controller('NullifyController', function ($scope, $http) {
 
-    //$scope.searchedfor = false;
 
     $scope.loadWebsite = function() {
         $http.get("/websites")
@@ -21,10 +20,6 @@ webapp.controller('NullifyController', function ($scope, $http) {
                 $scope.foundwebsite = data;
             });
     }
-
-    //$scope.addFave = function() {
-    //    $http.get("/addFave/" + $scope.websites)
-    //}
 
     $scope.sortAZ = function() {
         $http.get("/sortAZ/")
@@ -56,14 +51,6 @@ webapp.controller('NullifyController', function ($scope, $http) {
                 $scope.loadUsers();
             });
     }
-
-/*
-    $scope.deleteUser = function(userId) {
-        $http.delete("cs480/user/" + userId)
-            .success(function(data){
-                $scope.loadUsers();
-            });
-    }*/
 
     $scope.loadWebsite();
 

@@ -62,7 +62,7 @@ public class Website implements Comparable<Website>
 
 	public boolean canDelete()
 	{
-		return (!deleteaccount.equals("null"));
+		return (deleteaccount.charAt(0) != '/');
 	}
 	
 	@Override

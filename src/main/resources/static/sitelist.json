@@ -84,7 +84,7 @@
 		"domain": "https://studentaid.ed.gov/sa/fafsa",
 		"settings": "https://fsaid.ed.gov/npas/pas/acc/EditAccount",
 		"changepassword": "https://fsaid.ed.gov/npas/acc/changePw.htm",
-		"deleteaccount": "null",
+		"deleteaccount": "/",
 		"notes": "Federal info, can't delete",
 		"image": "/logos/resized/fafsa.jpg"
 	},
@@ -133,9 +133,9 @@
 	{
 		"website": "MyCPP",
 		"domain": "https://my.cpp.edu",
-		"settings": "null",
+		"settings": "/",
 		"changepassword": "https://apps.cpp.edu/idm/user_account.aspx",
-		"deleteaccount": "null",
+		"deleteaccount": "/",
 		"notes": "Cannot change settings or delete",
 		"image": "/logos/resized/mycpp.jpg"
 	},
@@ -185,7 +185,7 @@
 		"domain": "https://www.roblox.com/",
 		"settings": "https://www.roblox.com/my/account#!/info",
 		"changepassword": "https://www.roblox.com/my/account#!/info",
-		"deleteaccount": "null",
+		"deleteaccount": "/",
 		"notes": "Cannot be deleted",
 		"image": "/logos/resized/roblox.jpg"
 	},
@@ -206,7 +206,7 @@
 		"domain": "https://www.tcgplayer.com",
 		"settings": "https://store.tcgplayer.com/myaccount/buyeraccount",
 		"changepassword": "https://store.tcgplayer.com/myaccount/changepassword",
-		"deleteaccount": "null",
+		"deleteaccount": "/",
 		"notes": "Cannot be deleted",
 		"image": "/logos/resized/tcgplayer.jpg"
 	},
@@ -246,7 +246,7 @@
 		"domain": "https://www.xfinity.com/",
 		"settings": "https://customer.xfinity.com/#/settings/security",
 		"changepassword": "https://customer.xfinity.com/users/me/update-password",
-		"deleteaccount": "null",
+		"deleteaccount": "/",
 		"notes": "Cannot be deleted",
 		"image": "/logos/resized/xfinity.jpg"
 	},
