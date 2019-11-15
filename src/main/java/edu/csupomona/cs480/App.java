@@ -2,13 +2,18 @@
 package edu.csupomona.cs480;
 
 import edu.csupomona.cs480.data.provider.WebsiteManager;
+import edu.csupomona.cs480.service.UserService;
+import edu.csupomona.cs480.service.UserServiceImpl;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-  import edu.csupomona.cs480.data.provider.FSUserManager;
+import edu.csupomona.cs480.dao.UserDao;
+import edu.csupomona.cs480.dao.UserDaoImpl;
+import edu.csupomona.cs480.data.provider.FSUserManager;
   import edu.csupomona.cs480.data.provider.UserManager;
 
 @Configuration
@@ -34,6 +39,19 @@ public class App {
         return webManager;
     }
 
+
+    @Bean
+    public UserService userService()
+    {
+    	UserService userService = new UserServiceImpl();
+    	return userService;
+    }
+    @Bean
+    public UserDao userDao()
+    {
+    	UserDao userDao = new UserDaoImpl();
+    	return userDao;
+    }
     /**
      * This is the running main method for the web application.
      * Please note that Spring requires that there is one and
