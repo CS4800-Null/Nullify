@@ -1,0 +1,285 @@
+[
+	{
+		"website": "Airbnb",
+		"domain": "https://www.airbnb.com",
+		"settings": "https://www.airbnb.com/account-settings",
+		"changepassword": "https://www.airbnb.com/account-settings/login-and-security",
+		"deleteaccount": "https://www.airbnb.com/help/article/240/how-do-i-deactivate-or-delete-my-account",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/airbnb.jpg"
+	},
+
+	{
+		"website": "Amazon",
+		"domain": "https://www.amazon.com",
+		"settings": "https://www.amazon.com/gp/css/homepage.html?ref_=nav_youraccount_btn",
+		"changepassword": "https://www.amazon.com/gp/css/account/forgot-password/email.html",
+		"deleteaccount": "https://www.amazon.com/gp/help/customer/contact-us/?ie=UTF8&initialIssue=account-close",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/amazon.jpg"
+	},
+
+	{
+		"website": "AtomTickets",
+		"domain": "https://www.atomtickets.com",
+		"settings": "https://www.atomtickets.com/settings/profile",
+		"changepassword": "https://www.atomtickets.com/forgot-password",
+		"deleteaccount": "https://www.atomtickets.com/help/entry/delete-atom-account",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/atomtickets.jpg"
+	},
+
+	{
+		"website": "Discord",
+		"domain": "https://discordapp.com/login",
+		"settings": "https://support.discordapp.com/hc/en-us/categories/200404358-Account-Settings",
+		"changepassword": "https://support.discordapp.com/hc/en-us/articles/218410947-I-forgot-my-password-Where-can-I-set-a-new-one-",
+		"deleteaccount": "https://support.discordapp.com/hc/en-us/articles/212500837-How-do-I-permanently-delete-my-account-",
+		"notes": "",
+		"image": "/logos/resized/discord.jpg"
+	},
+	
+	{
+		"website": "Disneyland",
+		"domain": "https://disneyland.disney.go.com/",
+		"settings": "https://disneyland.disney.go.com/profile/account-settings/edit/",
+		"changepassword": "https://disneyland.disney.go.com/profile/account-settings/change-password/",
+		"deleteaccount": "https://disneyland.disney.go.com/faq/online-registration/how-to/",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/disneyland.jpg"
+	},
+	
+	{
+		"website": "Dropbox",
+		"domain": "https://www.dropbox.com",
+		"settings": "https://www.dropbox.com/account/",
+		"changepassword": "https://www.dropbox.com/account/security",
+		"deleteaccount": "https://www.dropbox.com/account/delete",
+		"notes": "",
+		"image": "/logos/resized/dropbox.jpg"
+	},
+	
+	{
+		"website": "Ebay",
+		"domain": "https://www.ebay.com",
+		"settings": "https://my.ebay.com/ws/eBayISAPI.dll?MyEbay&CurrentPage=MyeBayMyAccounts",
+		"changepassword": "https://reg.ebay.com/reg/ChangePwd",
+		"deleteaccount": "http://cgi1.ebay.com/ws/eBayISAPI.dll?CloseAccount",
+		"notes": "",
+		"image": "/logos/resized/ebay.jpg"
+	},
+	
+	{
+		"website": "Facebook",
+		"domain": "https://www.facebook.com",
+		"settings": "https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings",
+		"changepassword": "https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fsettings%3Ftab%3Dsecurity%26section%3Dpassword%26view",
+		"deleteaccount": "https://www.facebook.com/help/delete_account?rdrhc",
+		"notes": "",
+		"image": "/logos/resized/facebook.jpg"
+	},
+	
+	{
+		"website": "FAFSA",
+		"domain": "https://studentaid.ed.gov/sa/fafsa",
+		"settings": "https://fsaid.ed.gov/npas/pas/acc/EditAccount",
+		"changepassword": "https://fsaid.ed.gov/npas/acc/changePw.htm",
+		"deleteaccount": "/",
+		"notes": "Federal info, can't delete",
+		"image": "/logos/resized/fafsa.jpg"
+	},
+	
+	{
+		"website": "Github",
+		"domain": "https://github.com",
+		"settings": "https://github.com/settings/profile",
+		"changepassword": "https://github.com/settings/security",
+		"deleteaccount": "https://github.com/settings/admin",
+		"notes": "",
+		"image": "/logos/resized/github.jpg"
+	},
+	
+	{
+		"website": "Google",
+		"domain": "https://accounts.google.com/servicelogin",
+		"settings": "https://myaccount.google.com",
+		"changepassword": "https://myaccount.google.com/signinoptions/password",
+		"deleteaccount": "https://myaccount.google.com/deleteaccount",
+		"notes": "",
+		"image": "/logos/resized/google.jpg"
+
+	},
+	
+	{
+		"website": "Instagram",
+		"domain": "https://www.instagram.com",
+		"settings": "https://www.instagram.com/accounts/edit/",
+		"changepassword": "https://www.instagram.com/accounts/password/change/",
+		"deleteaccount": "https://instagram.com/accounts/remove/request/permanent/",
+		"notes": "",
+		"image": "/logos/resized/instagram.jpg"
+	},
+	
+	{
+		"website": "Monoprice",
+		"domain": "https://www.monoprice.com",
+		"settings": "https://www.monoprice.com/myaccount/index",
+		"changepassword": "https://www.monoprice.com/myaccount/ChangeAddressBook",
+		"deleteaccount": "https://www.monoprice.com/help?pn=contact",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/monoprice.jpg"
+	},
+	
+	{
+		"website": "MyCPP",
+		"domain": "https://my.cpp.edu",
+		"settings": "/",
+		"changepassword": "https://apps.cpp.edu/idm/user_account.aspx",
+		"deleteaccount": "/",
+		"notes": "Cannot change settings or delete",
+		"image": "/logos/resized/mycpp.jpg"
+	},
+	
+	{
+		"website": "Paypal",
+		"domain": "https://paypal.com",
+		"settings": "https://www.paypal.com/myaccount/settings/",
+		"changepassword": "https://www.paypal.com/myaccount/settings/security",
+		"deleteaccount": "https://www.paypal.com/myaccount/settings/account/close",
+		"notes": "Cannot be deleted, only closed",
+		"image": "/logos/resized/paypal.jpg"
+	},
+	
+	{
+		"website": "Pinterest",
+		"domain": "https://www.pinterest.com/",
+		"settings": "https://www.pinterest.com/login/?next=https%3A%2F%2Fwww.pinterest.com%2Fsettings",
+		"changepassword": "https://www.pinterest.com/login/?next=https%3A%2F%2Fwww.pinterest.com%2Fsettings%2Fsecurity",
+		"deleteaccount": "https://www.pinterest.com/login/?next=https%3A%2F%2Fwww.pinterest.com%2Fsettings%2Faccount-settings",
+		"notes": "",
+		"image": "/logos/resized/pinterest.jpg"
+	},
+	
+	{
+		"website": "Quora",
+		"domain": "https://www.quora.com",
+		"settings": "https://www.quora.com/settings",
+		"changepassword": "https://www.quora.com/settings",
+		"deleteaccount": "https://www.quora.com/settings/privacy",
+		"notes": "",
+		"image": "/logos/resized/quora.jpg"
+	},
+	
+	{
+		"website": "Reddit",
+		"domain": "https://www.reddit.com",
+		"settings": "https://www.reddit.com/settings",
+		"changepassword": "https://www.reddit.com/password",
+		"deleteaccount": "https://ssl.reddit.com/prefs/delete/",
+		"notes": "",
+		"image": "/logos/resized/reddit.jpg"
+	},
+	
+	{
+		"website": "Roblox",
+		"domain": "https://www.roblox.com/",
+		"settings": "https://www.roblox.com/my/account#!/info",
+		"changepassword": "https://www.roblox.com/my/account#!/info",
+		"deleteaccount": "/",
+		"notes": "Cannot be deleted",
+		"image": "/logos/resized/roblox.jpg"
+	},
+	
+	
+	{
+		"website": "Spotify",
+		"domain": "https://www.spotify.com/us",
+		"settings": "https://www.spotify.com/us/account/overview/",
+		"changepassword": "https://www.spotify.com/us/account/change-password/",
+		"deleteaccount": "https://support.spotify.com/us/contact-spotify-support/",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/spotify.jpg"
+	},
+	
+	{
+		"website": "Tcgplayer",
+		"domain": "https://www.tcgplayer.com",
+		"settings": "https://store.tcgplayer.com/myaccount/buyeraccount",
+		"changepassword": "https://store.tcgplayer.com/myaccount/changepassword",
+		"deleteaccount": "/",
+		"notes": "Cannot be deleted",
+		"image": "/logos/resized/tcgplayer.jpg"
+	},
+	
+	{
+		"website": "Twitter",
+		"domain": "https://twitter.com",
+		"settings": "https://twitter.com/settings/account",
+		"changepassword": "https://twitter.com/settings/password",
+		"deleteaccount": "https://twitter.com/settings/deactivate",
+		"notes": "",
+		"image": "/logos/resized/twitter.jpg"
+	},
+	
+	{
+		"website": "VRV",
+		"domain": "https://vrv.co",
+		"settings": "https://vrv.co/account",
+		"changepassword": "https://vrv.co/account",
+		"deleteaccount": "https://help.vrv.co/hc/en-us/requests/new",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/vrv.jpg"
+	},
+	
+	{
+		"website": "Vudu",
+		"domain": "https://www.vudu.com",
+		"settings": "https://www.vudu.com/content/AccountManage.html#accountInfo/",
+		"changepassword": "https://www.vudu.com/content/AccountManage.html#accountInfo/",
+		"deleteaccount": "https://www.vudu.com/content/support.html",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/vudu.jpg"
+	},
+	
+	{
+		"website": "Xfinity",
+		"domain": "https://www.xfinity.com/",
+		"settings": "https://customer.xfinity.com/#/settings/security",
+		"changepassword": "https://customer.xfinity.com/users/me/update-password",
+		"deleteaccount": "/",
+		"notes": "Cannot be deleted",
+		"image": "/logos/resized/xfinity.jpg"
+	},
+	
+	{
+		"website": "Yahoo",
+		"domain": "https://yahoo.com",
+		"settings": "https://login.yahoo.com/account/personalinfo",
+		"changepassword": "https://login.yahoo.com/account/change-password?",
+		"deleteaccount": "https://yahoo.mydashboard.oath.com/delete-my-account",
+		"notes": "",
+		"image": "/logos/resized/yahoo.jpg"
+	},
+	
+	
+	{
+		"website": "Yelp",
+		"domain": "https://www.yelp.com",
+		"settings": "https://www.yelp.com/profile",
+		"changepassword": "https://www.yelp.com/profile_password",
+		"deleteaccount": "https://www.yelp.co.uk/support/contact/account_closure",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/yelp.jpg"
+	},
+	
+	{
+		"website": "ZyBooks",
+		"domain": "https://www.zybooks.com/",
+		"settings": "https://learn.zybooks.com/library?modal_name=profile",
+		"changepassword": "https://learn.zybooks.com/library?modal_name=profile",
+		"deleteaccount": "https://zybooks.zendesk.com/hc/en-us/requests/new",
+		"notes": "Must contact support to delete",
+		"image": "/logos/resized/zybooks.jpg"
+	}
+]
+
