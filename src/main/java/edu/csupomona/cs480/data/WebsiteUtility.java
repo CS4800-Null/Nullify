@@ -37,7 +37,7 @@ public class WebsiteUtility
 		catch(Exception io)   {   System.out.println("failure at sitelist.json rsrc access");    }
 		getData(input);
 	}
-
+	
 	public void getData(InputStream file)
 	{
 		try
@@ -132,7 +132,7 @@ public class WebsiteUtility
 		return filtered;
 	}
 	
-
+	
 	//search method
 	public Website search(String webName)
 	{
@@ -142,9 +142,10 @@ public class WebsiteUtility
 		{
 			if(w.getWebsite().equalsIgnoreCase(webName))
 				return w;
-		}			return new Website("Not found", "", "", "", "", "", "logos/resized/zzimg.jpg");
+		}
+		return new Website("Not found", "", "", "", "", "", "logos/resized/zzimg.jpg");
 	}
-		
+	
 	public WebsiteMap siteMap()
 	{
 		//getData(sitelistFile);
@@ -156,9 +157,9 @@ public class WebsiteUtility
 		}
 		return web;
 	}
-
+	
 	// add website
-	public void addWebsite(Website website) 
+	public void addWebsite(Website website)
 	{
 		System.out.println("reached webcontroller addwebsite");
 		WebsiteMap websiteMap = getWebsiteJSON();

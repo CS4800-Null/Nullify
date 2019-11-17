@@ -5,9 +5,16 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import edu.csupomona.cs480.data.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +23,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.provider.*;
+/*import edu.csupomona.cs480.model.Login;
+import edu.csupomona.cs480.model.User;
+import edu.csupomona.cs480.service.UserService;*/
 
 
 /**
@@ -28,7 +38,7 @@ import edu.csupomona.cs480.data.provider.*;
 
 @RestController
 public class WebController {
-
+	
 	/**
 	 * When the class instance is annotated with
 	 * {@link Autowired}, it will be looking for the actual
@@ -37,11 +47,14 @@ public class WebController {
 	 * In our project, all the beans are defined in
 	 * the {@link App} class.
 	 */
+	//@Autowired
+	//public UserService userService;
 	@Autowired
 	private UserManager userManager;
 	@Autowired
 	private WebsiteManager webManager;
 	private WebsiteUtility websiteUtility = new WebsiteUtility();
+	private User dummyUser = new User();
 	
 	
 	@RequestMapping(value = "/search/{websitename}", method = RequestMethod.GET)
@@ -64,13 +77,13 @@ public class WebController {
 		System.out.println("website lister reached webcontroller");
 		return websiteUtility.sortAZ();
 	}
-
+	
 	@RequestMapping(value = "/sortZA", method = RequestMethod.GET)
 	ArrayList<Website> listWebsitesZA() {
 		System.out.println("website lister ZA reached webcontroller");
 		return websiteUtility.sortZA();
 	}
-
+	
 	/**
 	 * This method returns the contents of our sitelist.JSON file
 	 * after parsing the file to an array of Website objects
@@ -88,7 +101,7 @@ public class WebController {
 		Website[] web = js.readWebsiteJSON(inputStream);
 		return web;
 	}
-
+	
 	/**
 	 * This method will update our sitelist with newly added websites
 	 */
@@ -107,7 +120,7 @@ public class WebController {
 		websiteUtility.addWebsite(website);
 		return website;
 	}
-
+	
 	/**
 	 * This method will update our sitelist with newly added websites
 	 * This will be hardcoded in to add a single website as proof that the java works
@@ -133,5 +146,57 @@ public class WebController {
 	ArrayList<Website> listWebsitesCD() {
 		System.out.println("website lister candelete reached webcontroller");
 		return websiteUtility.canDelete();
+	}
+	
+	/*@PostMapping(value = "/registerProcess")
+	public String addUser(@ModelAttribute("user") User user, ModelMap model) {
+		userService.register(user);
+		model.addAttribute("username", user.getUsername());
+		
+		return "welcome " + user.getUsername() + "!" ;
+	}
+	@PostMapping(value = "/loginProcess")
+	public String login(@ModelAttribute("login") Login login, BindingResult bindingResult, ModelMap model) {
+		
+		User user = userService.validateUser(login);
+		
+		boolean isValidUser = false;
+		
+		if (null != user && user.getUsername().equals(login.getUsername())
+				&& user.getPassword().equals(login.getPassword())) {
+			isValidUser = true;
+			model.addAttribute("username", user.getUsername());
+		}
+		
+		return isValidUser ? "welcome " + user.getUsername() + "!" : "Login Failed.";
+	}*/
+	
+	@RequestMapping(value = "/addfolder/{foldername}", method = RequestMethod.GET)
+	boolean addFolder(@PathVariable("foldername") String foldername)
+	{
+		System.out.println("addfolder() reached webcontroller");
+		boolean success = dummyUser.addFolder(foldername);
+		return success;
+	}
+	
+	@RequestMapping(value = "/getfolder/{foldername}", method = RequestMethod.GET)
+	ArrayList<Website> getFolder(@PathVariable("foldername") String foldername)
+	{
+		System.out.println("getfolder() reached webcontroller");
+		return dummyUser.getFolder(foldername);
+	}
+	
+	@RequestMapping(value = "/additem/{foldername}", method = RequestMethod.GET)
+	void addItem(@PathVariable("foldername") String foldername, Website item)
+	{
+		System.out.println("additem() reached webcontroller");
+		dummyUser.addItem(foldername, item);
+	}
+	
+	@RequestMapping(value = "/getfoldernames", method = RequestMethod.GET)
+	ArrayList<String> getFolderNames()
+	{
+		System.out.println("getfoldernames() reached webcontroller");
+		return dummyUser.getFolderNames();
 	}
 }

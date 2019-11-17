@@ -7,9 +7,9 @@ webapp.controller('NullifyController', function ($scope, $http) {
 
     $scope.loadWebsite = function() {
         $http.get("/websites")
-            .success(function(data){
+            .success(function (data) {
                 //if($scope.sitelist != null)
-                    $scope.sitelist = data;
+                $scope.sitelist = data;
             });
     }
 
@@ -45,13 +45,44 @@ webapp.controller('NullifyController', function ($scope, $http) {
 
 // this is the add website button
     $scope.addWebsite = function() {
-    // add the rest of the fields
+        // add the rest of the fields
         $http.post("/cs480/" + $scope.websitenameinput + "?domain=" + $scope.domainnameinput + "&settings=" + $scope.changepasswordpageinput + "&changepassword=" + $scope.deleteaccountpageinput + "&deleteaccount=" + $scope.notesinput + "&notes") //  + $scope.imageinput + "&image"
             .success(function(data){
                 $scope.loadUsers();
             });
     }
 
+    $scope.addFolder = function() {
+        $http.get("/addfolder/" + $scope.addedfoldername)
+            .success(function(data){
+                $scope.folderadded = data;
+                $scope.getFolderNames();
+            });
+    }
+
+    $scope.getFolder = function() {
+        $scope.gottenfoldername = foldername;
+        $http.get("/getfolder/" + $scope.foldername)
+            .success(function(data){
+                $scope.sitelist = data;
+            });
+    }
+
+    $scope.getFolderNames = function() {
+        $http.get("/getfoldernames/")
+            .success(function(data){
+                $scope.listoffolders = data;
+            });
+    }
+
+    $scope.addItem = function() {
+        $http.get("/addItem/" + $scope.foldername, $scope.websiteobject)
+            .success(function(data){
+                //
+            });
+    }
+
     $scope.loadWebsite();
+    $scope.getFolderNames();
 
 });
