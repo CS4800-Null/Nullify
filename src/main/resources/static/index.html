@@ -57,6 +57,23 @@
 					</div>
 				</div>
 
+
+		  <!-- Drop down menu -->
+		  <p><p><p><p><p><p>
+		  <div class="dropDiv">
+
+
+			  <div class="dropdown">Folders</div>
+			  <div class="dropdownContent" >
+				  <input type="text" id="folderquery_id" ng-model="addedfoldername" placeholder="New folder name...">
+				  <button ng-click="addFolder()" type=submit formaction="index.html"><span>Add Folder</span></button>
+				  <br>
+				  <div ng-repeat="foldername in listoffolders">
+					  <a href="folder.html" ng-click="getFolder()" ng-change="loadWebsite()" ng-model="foldername">{{foldername}}</a>
+				  </div>
+			  </div>
+		  </div>
+
 			<!--ENTER NAVBAR INFO HERE-->
 		</aside> <!-- END COLORLIB-ASIDE -->
 
@@ -83,7 +100,7 @@
 					<div class="row no-gutters">
 
 						<!--All websites will display-->
-						<div class="col-md-4 ftco-animate" ng-repeat="websiteobject in sitelist" id="allwebsites">
+						<div class="col-md-4 ftco-animate" ng-repeat="websiteobject in sitelist" id="allwebsites" >
 							<div class="photography-entry img d-flex justify-content-center align-items-center" style="background-image: url({{websiteobject.image}});">
 								<div class="overlay"></div>
 									<div class="text text-center">

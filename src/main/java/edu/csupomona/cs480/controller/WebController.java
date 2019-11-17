@@ -54,6 +54,7 @@ public class WebController {
 	@Autowired
 	private WebsiteManager webManager;
 	private WebsiteUtility websiteUtility = new WebsiteUtility();
+	private User dummyUser = new User();
 	
 	
 	@RequestMapping(value = "/search/{websitename}", method = RequestMethod.GET)
@@ -169,4 +170,33 @@ public class WebController {
 
 	    return isValidUser ? "welcome " + user.getUsername() + "!" : "Login Failed.";
 	  }
+
+	@RequestMapping(value = "/addfolder/{foldername}", method = RequestMethod.GET)
+	boolean addFolder(@PathVariable("foldername") String foldername)
+	{
+		System.out.println("addfolder() reached webcontroller");
+		boolean success = dummyUser.addFolder(foldername);
+		return success;
+	}
+	
+	@RequestMapping(value = "/getfolder/{foldername}", method = RequestMethod.GET)
+	ArrayList<Website> getFolder(@PathVariable("foldername") String foldername)
+	{
+		System.out.println("getfolder() reached webcontroller");
+		return dummyUser.getFolder(foldername);
+	}
+	
+	@RequestMapping(value = "/additem/{foldername}", method = RequestMethod.GET)
+	void addItem(@PathVariable("foldername") String foldername, Website item)
+	{
+		System.out.println("additem() reached webcontroller");
+		dummyUser.addItem(foldername, item);
+	}
+	
+	@RequestMapping(value = "/getfoldernames", method = RequestMethod.GET)
+	ArrayList<String> getFolderNames()
+	{
+		System.out.println("getfoldernames() reached webcontroller");
+		return dummyUser.getFolderNames();
+	}
 }

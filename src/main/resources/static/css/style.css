@@ -7362,7 +7362,7 @@ h1, h2, h3, h4, h5,
       -o-transform: translateX(-270px);
       transform: translateX(-270px);
       padding-top: 2em;
-      background: rgba(0, 0, 0, 0.04); } }
+      background-color: #242423 /*rgba(0, 0, 0, 0.04)*/; } }
   #colorlib-aside #colorlib-logo {
     margin-bottom: 2.5em;
     display: block;
@@ -8524,13 +8524,14 @@ textarea.form-control {
 .dropDiv {
     color: #767676;
     position: relative;
-    display: inline-block;
+    display: block;
     width: 100%;
+    padding: 20px;
 }
 
 .dropdownContent {
     display: none;
-    position: absolute;
+    position: relative;
     background-color: #000;
     height: inherit;
     width: 100%;

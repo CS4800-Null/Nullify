@@ -142,7 +142,8 @@ public class WebsiteUtility
 		{
 			if(w.getWebsite().equalsIgnoreCase(webName))
 				return w;
-		}			return new Website("Not found", "", "", "", "", "", "logos/resized/zzimg.jpg");
+		}
+		return new Website("Not found", "", "", "", "", "", "logos/resized/zzimg.jpg");
 	}
 		
 	public WebsiteMap siteMap()
