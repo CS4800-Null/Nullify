@@ -1,13 +1,14 @@
 // This is angular controller for homepage
 
-var webapp = angular.module('webappCanDelete', []);
+var webapp = angular.module('webappFolder', []);
 
-webapp.controller('NullifyControllerCanDelete', function ($scope, $http) {
+webapp.controller('NullifyControllerFolder', function ($scope, $http) {
 
-    $scope.loadWebsiteCanDelete = function() {
-        $http.get("/candelete")
-            .success(function(data){
-                $scope.sitelist = data;
+    $scope.loadWebsite = function() {
+        $http.get("/websites")
+            .success(function (data) {
+                //if($scope.sitelist != null)
+                $scope.sitelist = getFolder();
             });
     }
 
@@ -84,7 +85,7 @@ webapp.controller('NullifyControllerCanDelete', function ($scope, $http) {
             });
     }
 
+    $scope.loadWebsite();
     $scope.getFolderNames();
-    $scope.loadWebsiteCanDelete();
 
 });
