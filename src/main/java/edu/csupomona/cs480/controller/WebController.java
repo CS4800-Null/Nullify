@@ -186,10 +186,11 @@ public class WebController {
 		return dummyUser.getFolder(foldername);
 	}
 	
-	@RequestMapping(value = "/additem/{foldername}", method = RequestMethod.GET)
-	void addItem(@PathVariable("foldername") String foldername, Website item)
+	@RequestMapping(value = "/additem/{foldername}/{websiteitem}", method = RequestMethod.GET)
+	void addItem(@PathVariable("foldername") String foldername, @PathVariable("websiteitem") String websiteitem)
 	{
 		System.out.println("additem() reached webcontroller");
+		Website item = websiteUtility.search(websiteitem);
 		dummyUser.addItem(foldername, item);
 	}
 	

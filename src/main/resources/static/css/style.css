@@ -8515,7 +8515,7 @@ textarea.form-control {
   font-style: italic; }
 /** this is where dropdown menu stuff is that we made */
 .dropdown {
-  float: left;
+  float: none;
   color: #000;
   background-color: #767676;
   width: 100%;
@@ -8535,7 +8535,7 @@ textarea.form-control {
   background-color: #000;
   height: inherit;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
 }
 
 .dropdownContent a {
@@ -8545,11 +8545,11 @@ textarea.form-control {
   text-decoration: none;
 }
 
-.dropdownContent a:hover {background-color: #000;}
+.dropdownContent a:hover {background-color: #000; z-index: 1000;}
 
 .dropDiv:hover .dropdownContent {
   display: block;
-  z-index: 1;
+  z-index: 100;
   height: auto;
 }
 

@@ -66,6 +66,7 @@ webapp.controller('NullifyController', function ($scope, $http) {
             .success(function(data){
                 $scope.sitelist = data;
             });
+        return $scope.sitelist;
     }
 
     $scope.getFolderNames = function() {
@@ -75,10 +76,12 @@ webapp.controller('NullifyController', function ($scope, $http) {
             });
     }
 
-    $scope.addItem = function() {
-        $http.get("/addItem/" + $scope.foldername, $scope.websiteobject)
+    $scope.addItem = function(item) {
+        var foldername = item.folder;
+        var websitename = item.websitename;
+        $http.get("/additem/" + foldername + "/" + websitename)
             .success(function(data){
-                //
+                alert(websitename + " added successfully to folder " + foldername);
             });
     }
 
