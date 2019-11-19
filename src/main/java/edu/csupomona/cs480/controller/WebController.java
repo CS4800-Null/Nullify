@@ -25,15 +25,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.provider.*;
-<<<<<<< HEAD
 import edu.csupomona.cs480.model.Login;
 import edu.csupomona.cs480.model.User;
 import edu.csupomona.cs480.service.UserService;
-=======
-/*import edu.csupomona.cs480.model.Login;
-import edu.csupomona.cs480.model.User;
-import edu.csupomona.cs480.service.UserService;*/
->>>>>>> nologin
 
 
 /**
