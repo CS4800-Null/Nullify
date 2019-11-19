@@ -69,7 +69,11 @@
 				<button ng-click="addFolder()" type=submit formaction="index.html"><span>Add Folder</span></button>
 				<br>
 				<div ng-repeat="foldername in listoffolders">
+<<<<<<< HEAD
 					<a href="folder.html" ng-click="getFolder()">{{foldername}}</a>
+=======
+					<a href="/getfolder/{{foldername}}">{{foldername}}</a>
+>>>>>>> nologin
 				</div>
 			</div>
 		</div>
@@ -103,12 +107,29 @@
 					<div class="col-md-4 ftco-animate" ng-repeat="websiteobject in sitelist" id="allwebsites" >
 						<div class="photography-entry img d-flex justify-content-center align-items-center" style="background-image: url({{websiteobject.image}});">
 							<div class="overlay"></div>
+<<<<<<< HEAD
 							<div class="text text-center">
 								<h3><a href="{{websiteobject.domain}}">{{websiteobject.website}}</a></h3>
+=======
+							<div class="text text-center" >
+								<h3><a href="{{websiteobject.domain}}" ng-init="item.websitename = websiteobject.website">{{websiteobject.website}}</a></h3>
+>>>>>>> nologin
 								<span class="tag"><a href="{{websiteobject.settings}}">Settings</a></span>
 								<br><span class="tag"><a href="{{websiteobject.changepassword}}">Change Password</a></span>
 								<br><span class="tag"><a href="{{websiteobject.deleteaccount}}">Delete Account</a></span>
 								<p class="text">{{websiteobject.notes}}</p>
+<<<<<<< HEAD
+=======
+
+								<label FOR="folderselect">
+									<span class="a">
+									<select id="folderselect">
+										<option ng-repeat="foldername in listoffolders" value="{{foldername}}" ng-init="item.folder = foldername">{{foldername}}</option>
+									</select>
+										<button type="submit" ng-click=addItem(item)>Add to Folder</button>
+									</span>
+								</label>
+>>>>>>> nologin
 							</div>
 						</div>
 					</div>

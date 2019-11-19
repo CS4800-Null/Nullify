@@ -11,6 +11,7 @@ webapp.controller('NullifyControllerCanDelete', function ($scope, $http) {
             });
     }
 
+
     $scope.searchWebsites = function() {
         $scope.searchedfor = true;
         $http.get("/search/" + $scope.websitesearch)
@@ -40,6 +41,7 @@ webapp.controller('NullifyControllerCanDelete', function ($scope, $http) {
             });
     }
 
+
 // this is the add website button
     $scope.addWebsite = function() {
         // add the rest of the fields
@@ -49,6 +51,40 @@ webapp.controller('NullifyControllerCanDelete', function ($scope, $http) {
             });
     }
 
+    $scope.addFolder = function() {
+        $http.get("/addfolder/" + $scope.addedfoldername)
+            .success(function(data){
+                $scope.folderadded = data;
+                $scope.getFolderNames();
+            });
+    }
+
+    $scope.getFolder = function() {
+        $scope.gottenfoldername = foldername;
+        $http.get("/getfolder/" + $scope.foldername)
+            .success(function(data){
+                $scope.sitelist = data;
+            });
+        return $scope.sitelist;
+    }
+
+    $scope.getFolderNames = function() {
+        $http.get("/getfoldernames/")
+            .success(function(data){
+                $scope.listoffolders = data;
+            });
+    }
+
+    $scope.addItem = function(item) {
+        var foldername = item.folder;
+        var websitename = item.websitename;
+        $http.get("/additem/" + foldername + "/" + websitename)
+            .success(function(data){
+                alert(websitename + " added successfully to folder " + foldername);
+            });
+    }
+
+    $scope.getFolderNames();
     $scope.loadWebsiteCanDelete();
 
 });

@@ -98,15 +98,15 @@ public class User
     	folders.get(name).add(item);
     }
     
-    public ArrayList<Website> getFolder(String name)
-    {
-	    return folders.get(name);
-    }
-    
     public ArrayList<String> getFolderNames()
     {
 	    ArrayList<String> names = new ArrayList<>(folders.keySet());
 	    return names;
     }
-    
+	
+	public ArrayList<Website> getFolder(String name)
+	{
+		return folders.get(name);
+	}
+	
 }

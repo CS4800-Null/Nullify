@@ -15,6 +15,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,9 +25,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.provider.*;
+<<<<<<< HEAD
 import edu.csupomona.cs480.model.Login;
 import edu.csupomona.cs480.model.User;
 import edu.csupomona.cs480.service.UserService;
+=======
+/*import edu.csupomona.cs480.model.Login;
+import edu.csupomona.cs480.model.User;
+import edu.csupomona.cs480.service.UserService;*/
+>>>>>>> nologin
 
 
 /**
@@ -38,7 +46,7 @@ import edu.csupomona.cs480.service.UserService;
 
 @RestController
 public class WebController {
-
+	
 	/**
 	 * When the class instance is annotated with
 	 * {@link Autowired}, it will be looking for the actual
@@ -77,13 +85,13 @@ public class WebController {
 		System.out.println("website lister reached webcontroller");
 		return websiteUtility.sortAZ();
 	}
-
+	
 	@RequestMapping(value = "/sortZA", method = RequestMethod.GET)
 	ArrayList<Website> listWebsitesZA() {
 		System.out.println("website lister ZA reached webcontroller");
 		return websiteUtility.sortZA();
 	}
-
+	
 	/**
 	 * This method returns the contents of our sitelist.JSON file
 	 * after parsing the file to an array of Website objects
@@ -101,7 +109,7 @@ public class WebController {
 		Website[] web = js.readWebsiteJSON(inputStream);
 		return web;
 	}
-
+	
 	/**
 	 * This method will update our sitelist with newly added websites
 	 */
@@ -120,12 +128,12 @@ public class WebController {
 		websiteUtility.addWebsite(website);
 		return website;
 	}
-
+	
 	/**
 	 * This method will update our sitelist with newly added websites
 	 * This will be hardcoded in to add a single website as proof that the java works
 	 */
-	@RequestMapping(value = "/hardAdd}", method = RequestMethod.POST)
+	@RequestMapping(value = "/hardAdd", method = RequestMethod.POST)
 	Website addWebsite() {
 		System.out.println("inside addwebsite webcontroller");
 		String image, wesite, domain,settings,changepassword,deleteaccount,notes;
@@ -167,7 +175,7 @@ public class WebController {
 	      isValidUser = true;
 	      model.addAttribute("username", user.getUsername());
 	    }
-
+		dummyUser = user;
 	    return isValidUser ? "welcome " + user.getUsername() + "!" : "Login Failed.";
 	  }
 
@@ -186,10 +194,11 @@ public class WebController {
 		return dummyUser.getFolder(foldername);
 	}
 	
-	@RequestMapping(value = "/additem/{foldername}", method = RequestMethod.GET)
-	void addItem(@PathVariable("foldername") String foldername, Website item)
+	@RequestMapping(value = "/additem/{foldername}/{websiteitem}", method = RequestMethod.GET)
+	void addItem(@PathVariable("foldername") String foldername, @PathVariable("websiteitem") String websiteitem)
 	{
 		System.out.println("additem() reached webcontroller");
+		Website item = websiteUtility.search(websiteitem);
 		dummyUser.addItem(foldername, item);
 	}
 	
