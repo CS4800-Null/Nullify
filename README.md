@@ -1,8 +1,10 @@
 Nullify
 --------
-Team: Null
-Members: Jay Chen, Jonathan Dunsmore, Romulo Supnet, Jeane Taruc
 Web application project for CS4800.
+
+Team Null
+--------
+Members - Jay Chen, Jonathan Dunsmore, Romulo Supnet, Jeane Taruc
 
 Project Overview
 --------
